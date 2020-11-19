@@ -1,0 +1,8 @@
+<%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "投稿" %>
+<% end %>
+
+<% @comments.each do |comment| %>
+  <p><%= comment.content %></p>
+<% end %>
