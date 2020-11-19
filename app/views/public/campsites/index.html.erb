@@ -1,0 +1,3 @@
+<% @campsites.each do |campsite| %>
+  <%= link_to campsite.name, public_campsite_path(campsite) %>
+<% end %>
