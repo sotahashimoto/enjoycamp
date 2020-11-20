@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :comments
+  has_many :favorites
+
+  # いいね判別
+  def already_favorited?(campsite)
+    self.favorites.exists?(campsite_id: campsite.id)
+  end
 end
