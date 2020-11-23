@@ -1,0 +1,2 @@
+<%# ("<%= j(render partial: '部分テンプレートがあるディレクトリー名/部分テンプレート名' %>
+$(".like-" + <%= @favorite.campsite_id %>).html("<%= j(render partial: 'public/campsites/favorite', locals: {campsite: @favorite.campsite}) %>");
