@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :recruitments, only: [:show, :index, :create, :destroy] do
         get "activate" => "recruitments#activate"
         # キャンプ参加希望
-        resources :participations, only: [:create, :destroy]
+        resources :participations, only: [:index, :create, :destroy]
       end
     end
   end

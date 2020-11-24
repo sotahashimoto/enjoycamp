@@ -1,4 +1,9 @@
 class Public::ParticipationsController < ApplicationController
+  def index
+    recruitment = Recruitment.find(params[:recruitment_id])
+    @participations = recruitment.participations
+  end
+
   def create
     @participation = current_user.participations.create(recruitment_id: params[:recruitment_id])
     redirect_back(fallback_location: root_path)

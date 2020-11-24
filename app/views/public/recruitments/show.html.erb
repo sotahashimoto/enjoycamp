@@ -1,6 +1,7 @@
 <%= @recruitment.title %>
 <%= @recruitment.content %>
 <%= @recruitment.participations.count %>/<%= @recruitment.capacity %>
+<%= link_to '参加者確認', public_campsite_recruitment_participations_path(@campsite, @recruitment) %>
 <%= @recruitment.scheduled_start_date %>
 <%= @recruitment.scheduled_end_date %>
 
