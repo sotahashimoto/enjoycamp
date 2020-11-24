@@ -1,0 +1,16 @@
+<%= @recruitment.title %>
+<%= @recruitment.content %>
+<%= @recruitment.scheduled_start_date %>
+<%= @recruitment.scheduled_end_date %>
+
+<% if @recruitment.is_active == true %>
+  参加者募集中
+<% else %>
+  参加者募集を締め切りました
+<% end %>
+
+<% if @recruitment.is_active == true %>
+  <% if user_signed_in? && current_user.id == @recruitment.user_id %>
+    <%= link_to '募集を締め切る', public_campsite_recruitment_activate_path(@campsite, @recruitment) %>
+  <% end %>
+<% end %>
