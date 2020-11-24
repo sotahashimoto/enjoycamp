@@ -1,16 +1,16 @@
-<%= @campsite.name %>の参加者募集
+<%= @recruitment.title %>
+<%= @recruitment.content %>
+<%= @recruitment.scheduled_start_date %>
+<%= @recruitment.scheduled_end_date %>
 
-<%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
-  <%= f.text_area :title %>
-  <%= f.text_area :content %>
-  <%= f.date_select :scheduled_start_date, use_month_numbers: true %>
-  <%= f.date_select :scheduled_end_date, use_month_numbers: true %>
-  <%= f.submit "投稿" %>
+<% if @recruitment.is_active == true %>
+  参加者募集中
+<% else %>
+  参加者募集を締め切りました
 <% end %>
 
-<% @recruitments.each do |recruitment| %>
-  <%= recruitment.title %>
-  <%= recruitment.content %>
-  <%= recruitment.scheduled_start_date %>
-  <%= recruitment.scheduled_end_date %><br>
+<% if @recruitment.is_active == true %>
+  <% if user_signed_in? && current_user.id == @recruitment.user_id %>
+    <%= link_to '募集を締め切る', public_campsite_recruitment_activate_path(@campsite, @recruitment) %>
+  <% end %>
 <% end %>

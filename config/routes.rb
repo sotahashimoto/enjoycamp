@@ -12,7 +12,9 @@ Rails.application.routes.draw do
       # キャンプ場お気に入り
       resources :favorites, only: [:create, :destroy]
       # キャンプ参加者募集
-      resources :recruitments, only: [:show, :create, :destroy]
+      resources :recruitments, only: [:show, :index, :create, :destroy] do
+        get "activate" => "recruitments#activate"
+      end
     end
   end
 end
