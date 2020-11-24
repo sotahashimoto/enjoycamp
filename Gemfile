@@ -63,5 +63,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ログイン機能
 gem 'devise'
+
 # デバッグ
 gem 'pry-byebug'
+
+# jQuery及びBootstrap
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.5.0'
