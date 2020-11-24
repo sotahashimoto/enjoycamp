@@ -10,28 +10,36 @@ User.create!(
   [
     {
       name: "かたつむり",
-      email: '1@1.com',
-      password: 'aaaaaa',
-      password_confirmation: 'aaaaaa'
+      email: "1@1.com",
+      password: "aaaaaa",
+      password_confirmation: "aaaaaa"
     },
     {
       name: "ケニー",
-      email: 'test2@user.com',
-      password: 'aaaaaa',
-      password_confirmation: 'aaaaaa'
+      email: "test2@user.com",
+      password: "aaaaaa",
+      password_confirmation: "aaaaaa"
     },
     {
       name: "ごみちゃん",
-      email: 'test3@user.com',
-      password: 'aaaaaa',
-      password_confirmation: 'aaaaaa'
+      email: "test3@user.com",
+      password: "aaaaaa",
+      password_confirmation: "aaaaaa"
     }
   ]
 )
 
 Campsite.create!(
   [
-    {name: "舞洲バーベキューパーク"},
-    {name: "スノーピーク箕面キャンプフィールド"}
+    {
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      name: "スノーピーク箕面キャンプフィールド",
+      postcode: "5630252",
+      address: "大阪府箕面市下止々呂美962"
+    }
   ]
 )

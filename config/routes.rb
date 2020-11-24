@@ -7,8 +7,12 @@ Rails.application.routes.draw do
 
   namespace :public do
     resources :campsites, only: [:show, :index, :edit, :create, :update, :destroy] do
+      # キャンプ場口コミ
       resources :comments, only: [:show, :create, :destroy]
+      # キャンプ場お気に入り
       resources :favorites, only: [:create, :destroy]
+      # キャンプ参加者募集
+      resources :recruitments, only: [:show, :create, :destroy]
     end
   end
 end

@@ -1,0 +1,16 @@
+<%= @campsite.name %>の参加者募集
+
+<%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
+  <%= f.text_area :title %>
+  <%= f.text_area :content %>
+  <%= f.date_select :scheduled_start_date, {} %>
+  <%= f.date_select :scheduled_end_date, {} %>
+  <%= f.submit "投稿" %>
+<% end %>
+
+<% @recruitments.each do |recruitment| %>
+  <%= recruitment.title %>
+  <%= recruitment.content %>
+  <%= recruitment.scheduled_start_date %>
+  <%= recruitment.scheduled_end_date %><br>
+<% end %>
