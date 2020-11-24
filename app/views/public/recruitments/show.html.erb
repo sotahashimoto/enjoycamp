@@ -3,8 +3,8 @@
 <%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
   <%= f.text_area :title %>
   <%= f.text_area :content %>
-  <%= f.date_select :scheduled_start_date, {} %>
-  <%= f.date_select :scheduled_end_date, {} %>
+  <%= f.date_select :scheduled_start_date, use_month_numbers: true %>
+  <%= f.date_select :scheduled_end_date, use_month_numbers: true %>
   <%= f.submit "投稿" %>
 <% end %>
 
