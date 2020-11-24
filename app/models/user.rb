@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :favorites
   has_many :recruitments
+  has_many :participations
 
   # いいね判別
   def already_favorited?(campsite)
