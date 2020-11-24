@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    resources :users, only: [:show, :edit, :update]
+
+    # キャンプ場
     resources :campsites, only: [:show, :index, :edit, :create, :update, :destroy] do
       # キャンプ場口コミ
-      resources :comments, only: [:show, :create, :destroy]
+      resources :comments, only: [:show, :create]
       # キャンプ場お気に入り
       resources :favorites, only: [:create, :destroy]
       # キャンプ参加者募集

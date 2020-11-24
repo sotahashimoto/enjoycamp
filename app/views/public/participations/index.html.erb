@@ -1,3 +1,5 @@
 <% @participations.each do |participation| %>
-  <%= participation.user.name %>
+  <%= link_to public_user_path(participation.user_id) do %>
+    <%= participation.user.name %>
+  <% end %>
 <% end %>
