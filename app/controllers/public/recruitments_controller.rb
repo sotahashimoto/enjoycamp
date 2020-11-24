@@ -24,15 +24,17 @@ class Public::RecruitmentsController < ApplicationController
   # キャンプ同行者募集を中止
   def activate
     @recruitment = Recruitment.find(params[:recruitment_id])
-    if @recruitment.update_attribute(:is_active, false)
+    if @recruitment.is_active == true
+      @recruitment.update_attribute(:is_active, false)
       redirect_back(fallback_location: root_path)
     else
+      @recruitment.update_attribute(:is_active, true)
       redirect_back(fallback_location: root_path)
     end
   end
 
   private
   def recruitment_params
-    params.require(:recruitment).permit(:scheduled_start_date, :scheduled_end_date, :title, :content, :is_active)
+    params.require(:recruitment).permit(:scheduled_start_date, :scheduled_end_date, :title, :content, :capacity, :is_active)
   end
 end

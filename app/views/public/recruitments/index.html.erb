@@ -3,6 +3,7 @@
 <%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
   <%= f.text_area :title %>
   <%= f.text_area :content %>
+  <%= f.text_area :capacity %>
   <%= f.date_select :scheduled_start_date, use_month_numbers: true %>
   <%= f.date_select :scheduled_end_date, use_month_numbers: true %>
   <%= f.submit "投稿" %>
@@ -13,6 +14,17 @@
     <%= recruitment.title %>
   <% end %>
   <%= recruitment.content %>
+  <%= recruitment.participations.count %>/<%= recruitment.capacity %>
   <%= recruitment.scheduled_start_date %>
-  <%= recruitment.scheduled_end_date %><br>
+  <%= recruitment.scheduled_end_date %>
+
+  <% if recruitment.is_active == true %>
+    <% unless recruitment.participations.count == recruitment.capacity %>
+      参加者募集中
+    <% else %>
+      定員人数に達した為参加を中止しています
+    <% end %>
+  <% else %>
+    参加者募集を締め切りました
+  <% end %><br>
 <% end %>

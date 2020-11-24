@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_094008) do
     t.date "scheduled_end_date"
     t.string "title"
     t.text "content"
+    t.integer "capacity"
     t.boolean "is_active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
