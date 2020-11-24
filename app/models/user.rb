@@ -7,9 +7,15 @@ class User < ApplicationRecord
   has_many :comments
   has_many :favorites
   has_many :recruitments
+  has_many :participations
 
-  # いいね判別
+  # いいねしたか判別
   def already_favorited?(campsite)
     self.favorites.exists?(campsite_id: campsite.id)
+  end
+
+  # 参加希望するか判別
+  def already_participationed?(recruitment)
+    self.participations.exists?(recruitment_id: recruitment.id)
   end
 end
