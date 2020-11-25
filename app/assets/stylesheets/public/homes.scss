@@ -1,3 +1,94 @@
 // Place all the styles related to the public::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* フォント */
+@font-face {
+  font-family: 'きんいろサンセリフ';
+  src: font_url('GN-Kin-iro_SansSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.top-image {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: image-url("top-image.png");
+
+  .top-title {
+    position: absolute;
+    top: 34%;
+    left: 39%;
+    font-size: 480%;
+    font-family: "きんいろサンセリフ", sans-serif;
+    color: #0FAF2D;
+  }
+
+  .top-subtitle {
+    position: absolute;
+    top: 49%;
+    left: 41%;
+    font-size: 200%;
+    font-family: "きんいろサンセリフ", sans-serif;
+    color: #0FAF2D;
+  }
+
+  .top-sinup {
+    position: absolute;
+    top: 58%;
+    left: 44%;
+    padding: 0.5%;
+    border-radius: 10%; /*角丸*/
+    font-size: 150%;
+    font-family: "きんいろサンセリフ", sans-serif;
+    background-color: #34D18F;
+  }
+  .top-sinup:hover {
+    background-color: rgb(255, 255, 255);
+    .link {
+      color: #34D18F;
+    }
+  }
+
+  .top-login {
+    position: absolute;
+    top: 58%;
+    left: 51%;
+    padding: 0.5%;
+    border-radius: 10%; /*角丸*/
+    font-size: 150%;
+    font-family: "きんいろサンセリフ", sans-serif;
+    background-color: #6189d3;
+  }
+  .top-login:hover {
+    background-color: rgb(255, 255, 255);
+    .link {
+      color: #6189d3;
+    }
+  }
+
+  .top-guestlogin {
+    position: absolute;
+    top: 65%;
+    left: 46%;
+    padding: 0.5%;
+    border-radius: 10%; /*角丸*/
+    font-size: 150%;
+    font-family: "きんいろサンセリフ", sans-serif;
+    background-color: #eba96c;
+  }
+  .top-guestlogin:hover {
+    background-color: rgb(255, 255, 255);
+    .link {
+      color: #eba96c;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
+  }
+}

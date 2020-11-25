@@ -1,0 +1,4 @@
+<%= form_with model: @user, url: public_user_path, local: true do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "登録情報変更" %>
+<% end %>

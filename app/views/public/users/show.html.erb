@@ -1,0 +1,6 @@
+<%= @user.name %>のマイページ
+<%= link_to 'ユーザー編集', edit_public_user_path(@user) %>
+
+<% @recruitments.each do |recruitment| %>
+  <%= recruitment.campsite.name %>
+<% end %>
