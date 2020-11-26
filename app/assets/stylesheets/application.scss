@@ -1,0 +1,206 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// signup、login画面の*マーク
+.asterisk {
+  color: red;
+}
+
+// 新規登録画面
+.signup-left {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  .signup-left-image {
+    position: absolute;
+    width: 100%;
+    min-height: 80vh;
+    top: 10%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: image-url("signup-image.png");
+
+    .signup-left-title {
+      position: absolute;
+      top: 45%;
+      left: 25%;
+      font-family: "きんいろサンセリフ", sans-serif;
+      font-size: 480%;
+      color: #005537;
+    }
+  }
+}
+
+.signup-right {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "きんいろサンセリフ", sans-serif;
+  color: #005537;
+
+  .signup-right-title {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 480%;
+    border-bottom: 2px solid #005537;
+    padding-bottom: 10%; /* titleと線との間隔量 */
+  }
+
+  .field {
+    margin-top: 2%;
+  }
+
+  label {
+    margin-left: 50%;
+  }
+
+  .password {
+    margin-left: 30%;
+  }
+
+  .password_confirmation {
+    margin-left: 40%;
+  }
+
+  // パスワード入力欄にfont-familyを適応していると文字が表示されない
+  .fontfamily-none {
+    font-family: none;
+  }
+
+  .form-control {
+    width: 60%;
+    margin-left: 20%;
+    border: 3px solid #005537;
+  }
+
+  .signup-submit-field {
+    margin-top: 5%;
+
+    .signup-submit {
+      width: 60%;
+      padding: 3px 0;
+      margin-left: 20%;
+      color: white;
+      background-color: #005537;
+      border: 3px solid #005537;
+    }
+  }
+}
+
+// ログイン画面
+.login {
+  background-color: #005537;
+
+  .login-left {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    .login-left-image {
+      position: absolute;
+      width: 100%;
+      min-height: 80vh;
+      top: 10%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: image-url("login-image.png");
+
+      .login-left-title {
+        position: absolute;
+        top: 45%;
+        left: 25%;
+        font-family: "きんいろサンセリフ", sans-serif;
+        font-size: 480%;
+        color: white;
+      }
+    }
+  }
+
+  .login-right {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "きんいろサンセリフ", sans-serif;
+    color: white;
+
+    .login-right-title {
+      margin-top: 15%;
+      text-align: center;
+      font-size: 480%;
+      border-bottom: 2px solid white;
+      padding-bottom: 10%; /* titleと線との間隔量 */
+    }
+
+    .field {
+      margin-top: 2%;
+    }
+
+    .email {
+      margin-left: 50%;
+    }
+
+    .password {
+      margin-left: 48%;
+    }
+
+    // パスワード入力欄にfont-familyを適応していると文字が表示されない
+    .fontfamily-none {
+      font-family: none;
+    }
+
+    .remember_me-field {
+      margin-left: 45%;
+    }
+
+    .form-control {
+      width: 60%;
+      margin-left: 20%;
+      border: 3px solid white;
+    }
+
+    .login-submit {
+      margin-top: 5%;
+      width: 60%;
+      padding: 3px 0;
+      margin-left: 20%;
+      color: #005537;
+      background-color: white;
+      border: 3px solid white;
+    }
+
+    .guestlogin-link-field {
+      width: 60%;
+      margin: 5% 0 0 20%;
+      padding: 3px 0;
+      text-align: center;
+      border-radius: 5px; /*角丸*/
+      font-size: 150%;
+      font-family: "きんいろサンセリフ", sans-serif;
+      background-color: #eba96c;
+    }
+
+    .link, .link:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

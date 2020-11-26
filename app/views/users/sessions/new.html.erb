@@ -1,26 +1,44 @@
-<h2>Log in</h2>
+<div class="login">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-md-6 login-left">
+        <div class="login-left-image">
+          <%= link_to root_path, class: "link" do %>
+            <h2 class="login-left-title">Enjoy CAMP!</h2>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-6 login-right">
+        <h2 class="login-right-title">Log in</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email, class: "email" %><span class="asterisk">　*</span><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+          <div class="field">
+            <%= f.label :password, class: "password" %><span class="asterisk">　*</span><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control fontfamily-none" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="field remember_me-field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+          <div class="actions">
+            <%= f.submit "Log in", class: "login-submit" %>
+          </div>
+        <% end %>
+
+        <%= link_to new_user_registration_path, class: "link" do %>
+          <div class="guestlogin-link-field">
+            かんたんログイン
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
