@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <div class="sidebar-item">
+    <!-- 中身 -->
+  </div>
+  <div class="sidebar-item sidebar-item-fixed">
+    <!-- 固定・追従させたいエリア -->
+    <div class="sidebar-logo-field">
+      <div class="sidebar-logo">
+        <%= link_to "Enjoy CAMP!", public_campsites_top_path, class: "sidebar-title" %>
+      </div>
+    </div>
+
+    <div class="sidebar-item-field">
+      <%= link_to "Campsites", public_campsites_path, class: "link" %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="sidebar-item-field">
+        <%= link_to "Mypage", public_user_path(current_user), class: "link" %>
+      </div>
+      <div class="sidebar-item-field">
+        <%= link_to "Logout", destroy_user_session_path, {method: :delete, class: "link"} %>
+      </div>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path, class: "link" %>
+      <%= link_to "ログイン", new_user_session_path, class: "link" %>
+    <% end %>
+  </div>
+</div>
