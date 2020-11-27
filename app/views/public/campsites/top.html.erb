@@ -7,10 +7,8 @@
       <%# メインコンテンツ %>
       <div class="main">
         <div class="main-imagecolor-opacity">
-          <%= @user.name %>のマイページ
-          <%= link_to 'ユーザー編集', edit_public_user_path(@user) %>
-          <% @recruitments.each do |recruitment| %>
-            <%= recruitment.campsite.name %>
+          <% @campsites.each do |campsite| %>
+            <%= link_to campsite.name, public_campsite_path(campsite) %>
           <% end %>
         </div>
       </div>
