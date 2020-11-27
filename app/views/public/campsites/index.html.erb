@@ -1,20 +1,49 @@
-<% @campsites.each do |campsite| %>
-  <%= link_to campsite.name, public_campsite_path(campsite) %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="area">
+    <%# サイドバー %>
+    <div class="sidebar">
+      <div class="sidebar-item">
+        <!-- 中身 -->
+      </div>
+      <div class="sidebar-item sidebar-item-fixed">
+        <!-- 固定・追従させたいエリア -->
+        <div class="sidebar-logo-field">
+          <div class="sidebar-logo">
+            <%= link_to "Enjoy CAMP!", public_campsites_path, class: "sidebar-title" %>
+          </div>
+        </div>
 
-  <% if user_signed_in? %>
-  <%# いいね機能 非同期 %>
-    <span class=<%= "like-" + campsite.id.to_s %>>
-      <%= render partial: "favorite", locals: { campsite: campsite } %>
-    </span>
-  <% end %>
-<% end %>
+        <div class="sidebar-item-field">
+          <%= link_to "Campsites", public_campsites_path, class: "link" %>
+        </div>
+        <% if user_signed_in? %>
+          <div class="sidebar-item-field">
+            <%= link_to "Mypage", public_user_path(current_user), class: "link" %>
+          </div>
+          <div class="sidebar-item-field">
+            <%= link_to "Logout", destroy_user_session_path, {method: :delete, class: "link"} %>
+          </div>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path, class: "link" %>
+          <%= link_to "ログイン", new_user_session_path, class: "link" %>
+        <% end %>
+      </div>
+      </div>
+      <%# メインコンテンツ %>
+      <div class="main">
+        <% @campsites.each do |campsite| %>
+          <%= link_to campsite.name, public_campsite_path(campsite) %>
 
-<div>
-  <% if user_signed_in? %>
-    <%= link_to "ログアウト", destroy_user_session_path, {method: :delete} %>
-  <% else %>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%= link_to "ログイン", new_user_session_path %>
-  <% end %>
-  <%= link_to "キャンプ場一覧", public_campsites_path %>
+          <% if user_signed_in? %>
+          <%# いいね機能 非同期 %>
+            <span class=<%= "like-" + campsite.id.to_s %>>
+              <%= render partial: "favorite", locals: { campsite: campsite } %>
+            </span>
+          <% end %>
+        <% end %>
+        <p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+      </div>
+    </div>
+  </div>
 </div>
