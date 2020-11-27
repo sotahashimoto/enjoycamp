@@ -198,9 +198,18 @@
       background-color: #eba96c;
     }
 
-    .link, .link:hover {
+    .guestlogin-link-field:hover {
+      background-color: #005537;
+    }
+
+    .link {
       text-decoration: none;
       color: white;
+    }
+
+    .link:hover {
+      text-decoration: none;
+      color: #eba96c;
     }
   }
 }
