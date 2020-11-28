@@ -16,7 +16,7 @@ jobs:
         - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
         - MYSQL_ROOT_HOST: '%'
 
-    working_directory: ~/aaa  #自身のアプリディレクトリ名を設定
+    working_directory: ~/enjoycamp  #自身のアプリディレクトリ名を設定
 
     steps:
     - checkout
