@@ -54,7 +54,13 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  # テスト
   gem 'capybara', '>= 2.15'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
+  # CircleCI使用時に必要
+  gem "rspec_junit_formatter"
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
@@ -72,3 +78,7 @@ gem 'pry-byebug'
 # jQuery及びBootstrap
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.5.0'
+
+# 画像投稿
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"

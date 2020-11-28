@@ -32,12 +32,38 @@ User.create!(
 Campsite.create!(
   [
     {
+      image: File.open("./app/assets/images/2.png"),
       name: "舞洲バーベキューパーク",
       postcode: "5540042",
       address: "大阪府大阪市此花区北港緑地2-1-107"
     },
     {
-      name: "スノーピーク箕面キャンプフィールド",
+      image: File.open("./app/assets/images/1.png"),
+      name: "スノーピーク箕面キャンプ",
+      postcode: "5630252",
+      address: "大阪府箕面市下止々呂美962"
+    },
+    {
+      image: File.open("./app/assets/images/3.jpg"),
+      name: "スノーピーク箕面キャンプ",
+      postcode: "5630252",
+      address: "大阪府箕面市下止々呂美962"
+    },
+    {
+      image: File.open("./app/assets/images/4.jpg"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/6.png"),
+      name: "スノーピーク箕面キャンプ",
       postcode: "5630252",
       address: "大阪府箕面市下止々呂美962"
     }

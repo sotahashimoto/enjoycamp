@@ -1,6 +1,6 @@
 class Public::CampsitesController < ApplicationController
   def top
-    @campsites = Campsite.all
+    @campsites = Campsite.limit(6)
   end
 
   def index
