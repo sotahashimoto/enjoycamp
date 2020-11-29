@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :recruitments
   has_many :participations
 
+  attachment :image
+
   # いいねしたか判別
   def already_favorited?(campsite)
     self.favorites.exists?(campsite_id: campsite.id)

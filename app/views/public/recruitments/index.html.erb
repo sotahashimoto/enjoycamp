@@ -1,30 +1,43 @@
-<%= @campsite.name %>の参加者募集
+<div class="container-fluid">
+  <div class="row">
+    <div class="area">
+      <%# サイドバー %>
+      <%= render partial: "layouts/sidebar" %>
 
-<%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
-  <%= f.text_area :title %>
-  <%= f.text_area :content %>
-  <%= f.number_field :capacity %>
-  <%= f.date_select :scheduled_start_date, use_month_numbers: true %>
-  <%= f.date_select :scheduled_end_date, use_month_numbers: true %>
-  <%= f.submit "投稿" %>
-<% end %>
+      <%# メインコンテンツ %>
+      <div class="main">
+        <div class="main-imagecolor-opacity">
+          <h2 class="main-title"><%= @campsite.name %>の参加者募集</h2>
+          <%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
+            <%= f.text_area :title %>
+            <%= f.text_area :content %>
+            <%= f.number_field :capacity %>
+            <%= f.date_select :scheduled_start_date, use_month_numbers: true %>
+            <%= f.date_select :scheduled_end_date, use_month_numbers: true %>
+            <%= f.submit "投稿" %>
+          <% end %>
 
-<% @recruitments.each do |recruitment| %>
-  <%= link_to public_campsite_recruitment_path(@campsite, recruitment) do %>
-    <%= recruitment.title %>
-  <% end %>
-  <%= recruitment.content %>
-  <%= recruitment.participations.count %>/<%= recruitment.capacity %>
-  <%= recruitment.scheduled_start_date %>
-  <%= recruitment.scheduled_end_date %>
+          <% @recruitments.each do |recruitment| %>
+            <%= link_to public_campsite_recruitment_path(@campsite, recruitment) do %>
+              <%= recruitment.title %>
+            <% end %>
+            <%= recruitment.content %>
+            <%= recruitment.participations.count %>/<%= recruitment.capacity %>
+            <%= recruitment.scheduled_start_date %>
+            <%= recruitment.scheduled_end_date %>
 
-  <% if recruitment.is_active == true %>
-    <% unless recruitment.participations.count == recruitment.capacity %>
-      参加者募集中
-    <% else %>
-      定員人数に達した為参加を中止しています
-    <% end %>
-  <% else %>
-    参加者募集を締め切りました
-  <% end %><br>
-<% end %>
+            <% if recruitment.is_active == true %>
+              <% unless recruitment.participations.count == recruitment.capacity %>
+                参加者募集中
+              <% else %>
+                定員人数に達した為参加を中止しています
+              <% end %>
+            <% else %>
+              参加者募集を締め切りました
+            <% end %><br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

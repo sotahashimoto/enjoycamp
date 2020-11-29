@@ -2,10 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.mypage-title {
-  padding: 4% 0;
+// マイページ画像
+.mypage-left {
   text-align: center;
-  font-size: 650%;
+  height: auto;
+
+  // 画像を円にする
+  .image-circle {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+// マイページ文字
+.mypage-right {
+  font-size: 170%;
   font-family: "きんいろサンセリフ", sans-serif;
-  border-bottom: 3px dotted #8a8a8a;
 }

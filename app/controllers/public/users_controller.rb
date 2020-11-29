@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @participations = @user.participations.includes([:campsite])
     @recruitments = @user.recruitments.includes([:campsite])
   end
 
