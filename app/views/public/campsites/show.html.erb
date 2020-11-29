@@ -1,5 +1,17 @@
-<%= @campsite.name %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="area">
+      <%# サイドバー %>
+      <%= render partial: "layouts/sidebar" %>
 
-<%= link_to "コメント", public_campsite_comment_path(@campsite) %>
-
-<%= link_to "参加者募集", public_campsite_recruitments_path(@campsite) %>
+      <%# メインコンテンツ %>
+      <div class="main">
+        <div class="main-imagecolor-opacity">
+          <h2 class="main-title"><%= @campsite.name %></h2>
+          <%= link_to "コメント", public_campsite_comment_path(@campsite) %>
+          <%= link_to "参加者募集", public_campsite_recruitments_path(@campsite) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

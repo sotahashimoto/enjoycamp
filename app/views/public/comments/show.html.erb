@@ -1,8 +1,23 @@
-<%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit "投稿" %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="area">
+      <%# サイドバー %>
+      <%= render partial: "layouts/sidebar" %>
 
-<% @comments.each do |comment| %>
-  <p><%= comment.content %></p>
-<% end %>
+      <%# メインコンテンツ %>
+      <div class="main">
+        <div class="main-imagecolor-opacity">
+          <h2 class="main-title"><%= @campsite.name %></h2>
+          <%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
+            <%= f.text_area :content %>
+            <%= f.submit "投稿" %>
+          <% end %>
+
+          <% @comments.each do |comment| %>
+            <p><%= comment.content %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

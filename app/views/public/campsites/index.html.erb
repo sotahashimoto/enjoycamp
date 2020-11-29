@@ -7,17 +7,18 @@
       <%# メインコンテンツ %>
       <div class="main">
         <div class="main-imagecolor-opacity">
-          <% @campsites.each do |campsite| %>
-            <%= link_to campsite.name, public_campsite_path(campsite) %>
+          <h2 class="main-title">Campsites</h2>
+            <% @campsites.each do |campsite| %>
+              <%= link_to campsite.name, public_campsite_path(campsite) %>
 
-            <% if user_signed_in? %>
-            <%# いいね機能 非同期 %>
-              <span class=<%= "like-" + campsite.id.to_s %>>
-                <%= render partial: "favorite", locals: { campsite: campsite } %>
-              </span>
+              <% if user_signed_in? %>
+              <%# いいね機能 非同期 %>
+                <span class=<%= "like-" + campsite.id.to_s %>>
+                  <%= render partial: "favorite", locals: { campsite: campsite } %>
+                </span>
+              <% end %>
             <% end %>
-          <% end %>
-          <p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+          </div>
         </div>
       </div>
     </div>
