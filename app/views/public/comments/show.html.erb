@@ -1,8 +1,51 @@
-<%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit "投稿" %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="area">
+      <%# サイドバー %>
+      <%= render partial: "layouts/sidebar" %>
 
-<% @comments.each do |comment| %>
-  <p><%= comment.content %></p>
-<% end %>
+      <%# メインコンテンツ %>
+      <div class="main">
+        <div class="main-imagecolor-opacity">
+          <h2 class="main-title"><%= @campsite.name %></h2>
+
+          <div class="comments-table">
+            <% @comments.each do |comment| %>
+              <div class="comments-table-content">
+                <table>
+                  <tr>
+                    <td rowspan="2">
+                      <%= attachment_image_tag comment.user, :image, format: 'jpeg', size: "100x100", fallback: "no_image.jpg", class: "comment-user-image-circle" %>
+                    </td>
+                    <td>
+                      <span>
+                        <%= link_to public_user_path(comment.user) do %>
+                          <%= comment.user.name %>
+                        <% end %>
+                      <span>さんの口コミ</span>
+                      </span>
+                      <span>
+                        <%= comment.created_at.strftime("%Y年%m月投稿") %>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="comment-content"><%= comment.content %></td>
+                  </tr>
+                </table>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="comment-content-field">
+            <%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
+              <%= f.text_area :content, class: "form-control comment-content-form"%>
+              <div class="comment-submit-field">
+              <%= f.submit "投稿", class: "comment-submit-btn" %>
+            </div><% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

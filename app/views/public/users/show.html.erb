@@ -8,7 +8,7 @@
       <div class="main">
         <div class="main-imagecolor-opacity">
           <h2 class="main-title">My page</h2>
-          <div class="row">
+          <div class="row mypage-content">
             <div class="col-md-6">
               <div class="mypage-left">
                 <%= attachment_image_tag @user, :image, format: 'jpeg', size: "200x200", fallback: "noprofile_image.jpg", class: "image-circle" %>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-6">
               <div class="mypage-right">
-                <table class="member-s-table">
+                <table class="mypage-right-table">
                   <tr>
                     <th>名前</th>
                     <td><%= current_user.name %></td>
@@ -26,8 +26,12 @@
                     <td><%= current_user.email %></td>
                   </tr>
                   <tr>
-                    <th>よく行くキャンプ場所</th>
-                    <td><%= current_user.name %></td>
+                    <th>よく行くキャンプ場</th>
+                    <td><%= current_user.favorite_place %></td>
+                  </tr>
+                  <tr>
+                    <th>自己紹介</th>
+                    <td><%= current_user.introduction %></td>
                   </tr>
                   <tr>
                     <th>募集中CAMP!</th>
@@ -38,7 +42,9 @@
                     <td><%= @participations.count %></td>
                   </tr>
                 </table>
-                <%= link_to 'ユーザー編集', edit_public_user_path(@user) %>
+                <div class="user-edit-link">
+                  <%= link_to 'ユーザー編集', edit_public_user_path(@user), class: "link" %>
+                </div>
               </div>
             </div>
           </div>

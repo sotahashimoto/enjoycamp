@@ -12,7 +12,7 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      render "show"
+      redirect_to public_user_path(current_user)
     else
       redirect_back(fallback_location: root_path)
     end
@@ -20,6 +20,6 @@ class Public::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:image, :name, :favorite_place, :introduction)
   end
 end

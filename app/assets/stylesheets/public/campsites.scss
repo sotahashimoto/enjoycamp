@@ -22,3 +22,39 @@
   margin-left: 90%;
   font-family: "きんいろサンセリフ", sans-serif;
 }
+
+// キャンプ詳細画面
+.campsite-image {
+  text-align: center;
+  margin-top: 5%;
+
+  .campsite-image-circle {
+    border-radius: 5%;
+  }
+}
+
+.campsite-table {
+  margin: 5% auto 0 auto;
+  font-size: 200%;
+  font-family: "きんいろサンセリフ", sans-serif;
+
+  th {
+    width: 15%;
+  }
+}
+
+.link-field {
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  font-family: "きんいろサンセリフ", sans-serif;
+  font-size: 30px;
+  color: black;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: black;
+}

@@ -2,7 +2,7 @@ class Public::CommentsController < ApplicationController
   def show
     @campsite = Campsite.find(params[:id])
     @comment = Comment.new
-    @comments = @campsite.comments
+    @comments = @campsite.comments.includes([:user])
   end
 
   def create
