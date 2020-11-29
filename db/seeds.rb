@@ -9,20 +9,23 @@
 User.create!(
   [
     {
+      image: File.open("./app/assets/images/member1.jpg"),
       name: "かたつむり",
       email: "1@1.com",
       password: "aaaaaa",
       password_confirmation: "aaaaaa"
     },
     {
+      image: File.open("./app/assets/images/member2.jpg"),
       name: "ケニー",
-      email: "test2@user.com",
+      email: "2@2.com",
       password: "aaaaaa",
       password_confirmation: "aaaaaa"
     },
     {
+      image: File.open("./app/assets/images/member3.jpg"),
       name: "ごみちゃん",
-      email: "test3@user.com",
+      email: "3@3.com",
       password: "aaaaaa",
       password_confirmation: "aaaaaa"
     }
