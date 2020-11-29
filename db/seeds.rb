@@ -12,6 +12,14 @@ User.create!(
       image: File.open("./app/assets/images/member1.jpg"),
       name: "かたつむり",
       email: "1@1.com",
+      favorite_place: "舞洲バーベキューパーク",
+      introduction: "年齢:平成6年男子
+      キャンプ歴:2019年10月～
+      拠点:山陰
+      テント:サーカスtc、名も無きスクリーンタープ
+      スタイル:ソロ
+      好き:ビール、肉、焚き火
+      憧れ:連泊キャンプ、ソログルキャン",
       password: "aaaaaa",
       password_confirmation: "aaaaaa"
     },
@@ -54,6 +62,72 @@ Campsite.create!(
     },
     {
       image: File.open("./app/assets/images/4.jpg"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
+      name: "舞洲バーベキューパーク",
+      postcode: "5540042",
+      address: "大阪府大阪市此花区北港緑地2-1-107"
+    },
+    {
+      image: File.open("./app/assets/images/5.png"),
       name: "舞洲バーベキューパーク",
       postcode: "5540042",
       address: "大阪府大阪市此花区北港緑地2-1-107"

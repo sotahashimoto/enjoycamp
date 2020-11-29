@@ -1,3 +1,45 @@
 // Place all the styles related to the public::comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-content {
+  word-break : break-all;
+}
+
+.comments-table {
+  width: 80%;
+  margin: 3% auto 0 auto;
+}
+
+.comments-table-content {
+  margin: 3%;
+  padding-bottom: 3%;
+  width: auto;
+  border-bottom: 3px dotted #8a8a8a;
+  font-family: "きんいろサンセリフ", sans-serif;
+  font-size: 200%;
+}
+
+.comment-user-image-circle {
+  border-radius: 50%;
+}
+
+.comment-content-field {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  padding-bottom: 2%;
+
+  .comment-content-form {
+    height: 150px;
+  }
+
+  .comment-submit-btn {
+    height: 40px;
+    width: 20%;
+  }
+
+  .comment-submit-field {
+    margin-top: 1%;
+    text-align: center;
+  }
+}
