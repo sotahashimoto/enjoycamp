@@ -1,8 +1,12 @@
 class Public::UsersController < ApplicationController
+
+  require 'date'
   def show
     @user = User.find(params[:id])
     @participations = @user.participations.includes([:campsite])
-    @recruitments = @user.recruitments.includes([:campsite])
+    # キャンプ募集の開始部日が今日より前で募集中の時に表示
+    @recruitments = @user.recruitments.where("scheduled_start_date > ?", DateTime.now)
+    @recruitments = @recruitments.where(is_active: "true").includes([:campsite])
   end
 
   def edit
