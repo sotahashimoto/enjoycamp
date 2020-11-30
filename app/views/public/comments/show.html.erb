@@ -15,7 +15,7 @@
                 <table>
                   <tr>
                     <td rowspan="2">
-                      <%= attachment_image_tag comment.user, :image, format: 'jpeg', size: "100x100", fallback: "no_image.jpg", class: "comment-user-image-circle" %>
+                      <%= attachment_image_tag comment.user, :image, format: 'jpeg', size: "100x100", fallback: "noimage-user.png", class: "comment-user-image-circle" %>
                     </td>
                     <td>
                       <span>
@@ -39,10 +39,11 @@
 
           <div class="comment-content-field">
             <%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
-              <%= f.text_area :content, class: "form-control comment-content-form"%>
+              <%= f.text_area :content, class: "form-control comment-content-form", required:true , minlength: 1, maxlength: 200 %>
               <div class="comment-submit-field">
-              <%= f.submit "投稿", class: "comment-submit-btn" %>
-            </div><% end %>
+                <%= f.submit "投稿", class: "comment-submit-btn" %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

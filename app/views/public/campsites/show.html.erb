@@ -11,7 +11,7 @@
           <div class="campsite-content">
             <div class="campsite-image">
               <span class="image-favorite">
-                <%= attachment_image_tag @campsite, :image, format: 'jpeg', size: "700x300", fallback: "noprofile_image.jpg", class: "campsite-image-circle" %>
+                <%= attachment_image_tag @campsite, :image, format: 'jpeg', size: "700x300", fallback: "noimage-campsite.png", class: "campsite-image-circle" %>
                 <span class="image-favorite-content">
                   <%# いいね機能 非同期 %>
                   <span class= <%= "like-" + @campsite.id.to_s %>>

@@ -1,3 +1,40 @@
 // Place all the styles related to the public::Recruitments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recruitment-main-title {
+  padding: 4% 0;
+  text-align: center;
+  font-size: 300%;
+  font-family: "きんいろサンセリフ", sans-serif;
+  border-bottom: 3px dotted #8a8a8a;
+}
+
+.recruitment-content {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  font-family: "きんいろサンセリフ", sans-serif;
+  font-size: 40px;
+  color: black;
+}
+
+.recruitment-image {
+  text-align: center;
+  margin-top: 2%;
+
+  .recruitment-image-circle {
+    border-radius: 5%;
+  }
+}
+
+.capacity-form {
+  width: 10%;
+}
+
+.recruitment-title-form {
+  margin-bottom: 2%;
+}
+
+.recruitment-content-form {
+  margin-bottom: 2%;
+}

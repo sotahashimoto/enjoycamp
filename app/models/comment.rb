@@ -6,4 +6,6 @@ class Comment < ApplicationRecord
     validates :content
     # validates :score
   end
+
+  validates :content, length: {maximum: 200}
 end

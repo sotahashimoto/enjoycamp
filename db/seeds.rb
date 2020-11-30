@@ -110,7 +110,7 @@ Campsite.create!(
     },
     {
       image: File.open("./app/assets/images/5.png"),
-      name: "舞洲バーベキューパーク",
+      name: "かたつむりかたつむりかたつむりかた",
       postcode: "5540042",
       address: "大阪府大阪市此花区北港緑地2-1-107"
     },

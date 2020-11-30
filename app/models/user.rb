@@ -11,6 +11,14 @@ class User < ApplicationRecord
 
   attachment :image
 
+  with_options presence: true do
+    validates :name
+  end
+
+  validates :name, length: {maximum: 15}
+  validates :favorite_place, length: {maximum: 17}
+  validates :introduction, length: {maximum: 100}
+
   # いいねしたか判別
   def already_favorited?(campsite)
     self.favorites.exists?(campsite_id: campsite.id)

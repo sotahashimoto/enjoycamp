@@ -36,6 +36,6 @@ class Public::RecruitmentsController < ApplicationController
 
   private
   def recruitment_params
-    params.require(:recruitment).permit(:scheduled_start_date, :scheduled_end_date, :title, :content, :capacity, :is_active)
+    params.require(:recruitment).permit(:image, :scheduled_start_date, :scheduled_end_date, :title, :content, :capacity, :is_active)
   end
 end
