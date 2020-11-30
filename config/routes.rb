@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   namespace :public do
     get "search", to: 'campsites#search'
+    post '/homes/guest_sign_in', to: 'homes#new_guest'
+
     resources :users, only: [:show, :edit, :update]
 
     # キャンプ場
