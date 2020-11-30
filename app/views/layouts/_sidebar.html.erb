@@ -5,9 +5,9 @@
   <div class="sidebar-item sidebar-item-fixed">
     <!-- 固定・追従させたいエリア -->
     <div class="sidebar-logo-field">
-      <div class="sidebar-logo">
-        <%= link_to "Enjoy CAMP!", public_campsites_top_path, class: "sidebar-title" %>
-      </div>
+      <%= link_to public_campsites_top_path do %>
+        <div class="sidebar-logo"></div>
+      <% end %>
     </div>
 
     <div class="sidebar-item-field">

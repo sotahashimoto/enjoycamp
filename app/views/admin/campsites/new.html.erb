@@ -7,3 +7,7 @@
   <%= f.text_area :address, placeholder: "住所", required:true , minlength: 1, maxlength: 25 %>
   <%= f.submit "投稿" %>
 <% end %>
+
+<% if admin_signed_in? %>
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete %>
+<% end %>
