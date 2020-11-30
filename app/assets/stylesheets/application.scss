@@ -46,7 +46,7 @@
     top: 10%;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: image-url("signup-image.png");
+    background-image: image-url("signup-logo.png");
 
     .signup-left-title {
       position: absolute;
@@ -130,7 +130,7 @@
       top: 10%;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: image-url("login-image.png");
+      background-image: image-url("login-logo.png");
 
       .login-left-title {
         position: absolute;
@@ -253,25 +253,16 @@
   }
 
   .sidebar-logo-field {
-    width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
+    width: 280px;
   }
 
   .sidebar-logo {
-    position: relative;
     height: 300px;
+    position: relative;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: image-url("login-image.png");
-
-    .sidebar-title {
-      position: absolute;
-      top: 44%;
-      left: 20%;
-      font-size: 250%;
-      text-decoration: none;
-      color: white;
-    }
+    background-image: image-url("logo.png");
   }
 
   .sidebar-item-field {
