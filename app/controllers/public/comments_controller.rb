@@ -1,4 +1,6 @@
 class Public::CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @campsite = Campsite.find(params[:id])
     @comment = Comment.new

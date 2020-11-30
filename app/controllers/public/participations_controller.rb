@@ -1,4 +1,6 @@
 class Public::ParticipationsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     recruitment = Recruitment.find(params[:recruitment_id])
     @participations = recruitment.participations

@@ -19,19 +19,19 @@
                 <table class="mypage-right-table">
                   <tr>
                     <th>名前</th>
-                    <td><%= current_user.name %></td>
+                    <td><%= @user.name %></td>
                   </tr>
                   <tr>
                     <th>Email</th>
-                    <td><%= current_user.email %></td>
+                    <td><%= @user.email %></td>
                   </tr>
                   <tr>
                     <th>よく行くキャンプ場</th>
-                    <td><%= current_user.favorite_place %></td>
+                    <td><%= @user.favorite_place %></td>
                   </tr>
                   <tr>
                     <th>自己紹介</th>
-                    <td><%= current_user.introduction %></td>
+                    <td><%= @user.introduction %></td>
                   </tr>
                   <tr>
                     <th>募集中CAMP!</th>
@@ -42,9 +42,11 @@
                     <td><%= @participations.count %></td>
                   </tr>
                 </table>
-                <div class="user-edit-link">
-                  <%= link_to 'ユーザー編集', edit_public_user_path(@user), class: "link" %>
-                </div>
+                <% if user_signed_in? && @user == current_user %>
+                  <div class="user-edit-link">
+                    <%= link_to 'ユーザー編集', edit_public_user_path(@user), class: "link" %>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>

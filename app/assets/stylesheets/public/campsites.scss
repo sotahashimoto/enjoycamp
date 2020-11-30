@@ -44,13 +44,20 @@
 }
 
 .link-field {
+  width: 30%;
+  margin: 1% auto 0 auto;
   text-align: center;
+  border-radius: 10%;
   background-color: yellowgreen;
 }
 
 .link-field:hover {
   text-align: center;
-  background-color: rgb(194, 194, 194);
+  background-color: yellowgreen;
+
+  .link {
+    color: white;
+  }
 }
 
 .link {
@@ -62,7 +69,7 @@
 
 .link:hover {
   text-decoration: none;
-  color: black;
+  color: yellowgreen;
 }
 
 .image-favorite {

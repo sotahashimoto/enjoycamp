@@ -37,14 +37,18 @@
             <% end %>
           </div>
 
-          <div class="comment-content-field">
-            <%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
-              <%= f.text_area :content, class: "form-control comment-content-form", required:true , minlength: 1, maxlength: 200 %>
-              <div class="comment-submit-field">
-                <%= f.submit "投稿", class: "comment-submit-btn" %>
-              </div>
-            <% end %>
-          </div>
+          <% if user_signed_in? %>
+            <div class="comment-content-field">
+              <%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
+                <%= f.text_area :content, placeholder: "口コミ内容 200文字以内
+星空が結構見えました。星を見たければ山奥のイメージだったので意外でした。
+鹿や猿などの野生動物にも出会えるという自然豊かなキャンプ場、遊び疲れたら、徒歩圏内にある天然温泉「キャンプの湯」へ。自然に囲まれた露天風呂で癒されましょう。", class: "form-control comment-content-form", required:true , minlength: 1, maxlength: 200 %>
+                <div class="comment-submit-field">
+                  <%= f.submit "投稿", class: "comment-submit-btn" %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

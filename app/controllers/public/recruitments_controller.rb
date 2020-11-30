@@ -1,4 +1,6 @@
 class Public::RecruitmentsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @campsite = Campsite.find(params[:campsite_id])
     @recruitment = Recruitment.find(params[:id])
