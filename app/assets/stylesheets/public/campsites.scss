@@ -18,6 +18,21 @@
   border-bottom: 3px dotted #8a8a8a;
 }
 
+.campsites-search-area {
+  text-align: center;
+
+  .campsites-search-field {
+    width: 50%;
+    text-align: center;
+    font-family: "きんいろサンセリフ", sans-serif;
+  }
+
+  .campsites-search-btn {
+    width: 10%;
+    font-family: "きんいろサンセリフ", sans-serif;
+  }
+}
+
 .public_campsites_path-field {
   margin-left: 90%;
   font-family: "きんいろサンセリフ", sans-serif;

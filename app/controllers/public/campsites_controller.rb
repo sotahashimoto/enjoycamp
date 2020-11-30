@@ -12,4 +12,9 @@ class Public::CampsitesController < ApplicationController
   def show
     @campsite = Campsite.find(params[:id])
   end
+
+  def search
+    @campsites = Campsite.search(params[:search])
+    render "index"
+  end
 end
