@@ -66,4 +66,6 @@ https://enjoycamp.work/
 ## About me
 
 新卒で3年間事務職として病院に勤務しておりました。その後土木資材の営業を経験し、2020年7月からWebエンジニアを目指して勉強中です。<br>
-前職の経験を活かした病院検索アプリ「hosnavi」→https://hosnavi.work/ github→https://github.com/sotahashimoto/hosnavi
+前職の経験を活かした病院検索アプリ
+- hosnavi→https://hosnavi.work/
+- github→https://github.com/sotahashimoto/hosnavi
