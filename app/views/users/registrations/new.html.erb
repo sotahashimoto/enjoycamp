@@ -8,16 +8,15 @@
     <div class="col-md-6 signup-right">
       <h2 class="signup-right-title">Sign up</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "users/shared/error_messages", resource: resource %>
 
         <div class="field">
           <%= f.label :name %><span class="asterisk">　*</span><br />
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", required:true, minlength: 1, maxlength: 15, class: "form-control" %>
         </div>
 
         <div class="field">
           <%= f.label :email %><span class="asterisk">　*</span><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", required:true, minlength: 1, maxlength: 30, class: "form-control" %>
         </div>
 
         <div class="field">
@@ -25,12 +24,12 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> 文字以上 半角英数字)</em><span class="asterisk">　*</span>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "form-control fontfamily-none" %>
+          <%= f.password_field :password, autocomplete: "new-password", required:true, minlength: 6, class: "form-control fontfamily-none" %>
         </div>
 
         <div class="field">
           <%= f.label :password_confirmation, class: "password_confirmation" %><span class="asterisk">　*</span><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control fontfamily-none" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", required:true, minlength: 6, class: "form-control fontfamily-none" %>
         </div>
 
         <div class="actions signup-submit-field">

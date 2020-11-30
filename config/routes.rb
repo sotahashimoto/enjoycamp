@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    get "search", to: 'campsites#search'
     resources :users, only: [:show, :edit, :update]
 
     # キャンプ場

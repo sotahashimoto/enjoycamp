@@ -23,6 +23,11 @@
   box-sizing: border-box;
 }
 
+// signupの画面でエラーが出た時に崩れるのを防止
+.field_with_errors {
+  display: contents
+}
+
 // signup、login画面の*マーク
 .asterisk {
   color: red;
@@ -262,7 +267,7 @@
     position: relative;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: image-url("logo.png");
+    background-image: image-url("login-logo.png");
   }
 
   .sidebar-item-field {

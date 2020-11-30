@@ -7,7 +7,13 @@
       <%# メインコンテンツ %>
       <div class="main">
         <div class="main-imagecolor-opacity">
-        <h2 class="main-title">Campsites</h2>
+          <h2 class="main-title">Campsites</h2>
+          <div class="campsites-search-area">
+            <%= form_with(url: public_search_path, method: :get, local: true) do |f| %>
+              <%= f.text_field :search, placeholder: "キャンプ場または住所で検索", class: "campsites-search-field" %>
+              <%= f.submit '検索', class: "campsites-search-btn" %>
+            <% end %>
+          </div>
           <div class="card-wrapper justify-content-center">
             <% @campsites.each do |campsite| %>
               <div class="card">
