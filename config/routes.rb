@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admins
   devise_for :users
+
+  namespace :admin do
+    resources :campsites, only: [:new, :index, :create, :show, :edit, :update, :destroy]
+  end
 
   scope module: :public do
     root to: 'homes#top'

@@ -1,0 +1,8 @@
+<%= link_to "new", new_admin_campsite_path %>
+
+<% @campsites.each do |campsite| %>
+  <%= attachment_image_tag campsite, :image, format: 'jpeg', size: "300x200", fallback: "noimage-campsite.png" %>
+  <%= campsite.name %>
+  <%= campsite.postcode %>
+  <%= campsite.address %>
+<% end %>

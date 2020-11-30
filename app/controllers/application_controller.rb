@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
     case resource
     when User
       public_campsites_top_path
+    when Admin
+      new_admin_campsite_path
     end
   end
 end
