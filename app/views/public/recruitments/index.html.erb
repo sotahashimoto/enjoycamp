@@ -8,6 +8,53 @@
       <div class="main">
         <div class="main-imagecolor-opacity">
           <h2 class="main-title"><%= @campsite.name %>の参加者募集</h2>
+          <div class="comments-table">
+            <% @recruitments.each do |recruitment| %>
+              <div class="comments-table-content">
+                <table>
+                  <tr>
+                    <td rowspan="3">
+                      <%= attachment_image_tag recruitment.user, :image, format: 'jpeg', size: "100x100", fallback: "no_image.jpg", class: "comment-user-image-circle" %>
+                    </td>
+                    <td>
+                      <span>
+                        <%= link_to public_user_path(recruitment.user) do %>
+                          <%= recruitment.user.name %>
+                        <% end %>
+                        <span>さんの募集</span>
+
+                        <% if recruitment.is_active == true %>
+                          <% unless recruitment.participations.count == recruitment.capacity %>
+                            参加者募集中
+                          <% else %>
+                            定員人数に達した為参加を中止しています
+                          <% end %>
+                        <% else %>
+                          参加者募集を締め切りました
+                        <% end %>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                        <%= recruitment.scheduled_start_date.strftime("予定日%Y年%m月%d日 -") %>
+                        <%= recruitment.scheduled_end_date.strftime("%Y年%m月%d日") %>
+                        募集人数<%= recruitment.participations.count %>/<%= recruitment.capacity %>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <%= link_to public_campsite_recruitment_path(@campsite, recruitment) do %>
+                        <%= recruitment.title.truncate(35) %>
+                      <% end %>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            <% end %>
+          </div>
           <%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
             <%= f.text_area :title %>
             <%= f.text_area :content %>
@@ -15,26 +62,6 @@
             <%= f.date_select :scheduled_start_date, use_month_numbers: true %>
             <%= f.date_select :scheduled_end_date, use_month_numbers: true %>
             <%= f.submit "投稿" %>
-          <% end %>
-
-          <% @recruitments.each do |recruitment| %>
-            <%= link_to public_campsite_recruitment_path(@campsite, recruitment) do %>
-              <%= recruitment.title %>
-            <% end %>
-            <%= recruitment.content %>
-            <%= recruitment.participations.count %>/<%= recruitment.capacity %>
-            <%= recruitment.scheduled_start_date %>
-            <%= recruitment.scheduled_end_date %>
-
-            <% if recruitment.is_active == true %>
-              <% unless recruitment.participations.count == recruitment.capacity %>
-                参加者募集中
-              <% else %>
-                定員人数に達した為参加を中止しています
-              <% end %>
-            <% else %>
-              参加者募集を締め切りました
-            <% end %><br>
           <% end %>
         </div>
       </div>

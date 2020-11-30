@@ -7,7 +7,8 @@ class Public::RecruitmentsController < ApplicationController
   def index
     @campsite = Campsite.find(params[:campsite_id])
     @recruitment = Recruitment.new
-    @recruitments = @campsite.recruitments
+    @recruitments = @campsite.recruitments.where("scheduled_start_date > ?", DateTime.now)
+    @recruitments = @recruitments.where(is_active: "true").includes([:user])
   end
 
   def create
