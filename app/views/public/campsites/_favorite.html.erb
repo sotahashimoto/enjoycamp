@@ -1,9 +1,11 @@
-<% if current_user.already_favorited?(campsite) %>
-  <%= link_to public_campsite_favorite_path(campsite, campsite), method: :delete, remote: true do %>
-    いいね外す
-  <% end %>
-<% else %>
-  <%= link_to public_campsite_favorites_path(campsite), method: :post, remote: true do %>
-    いいね
+<% if user_signed_in? %>
+  <% if current_user.already_favorited?(campsite) %>
+    <%= link_to public_campsite_favorite_path(campsite, campsite), method: :delete, remote: true do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to public_campsite_favorites_path(campsite), method: :post, remote: true do %>
+      <i class="far fa-heart"></i>
+    <% end %>
   <% end %>
 <% end %>

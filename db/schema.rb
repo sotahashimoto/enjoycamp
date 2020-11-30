@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_094008) do
   end
 
   create_table "recruitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_id"
     t.integer "user_id"
     t.integer "campsite_id"
     t.date "scheduled_start_date"

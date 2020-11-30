@@ -1,4 +1,6 @@
 class Public::RecruitmentsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @campsite = Campsite.find(params[:campsite_id])
     @recruitment = Recruitment.find(params[:id])
@@ -7,7 +9,8 @@ class Public::RecruitmentsController < ApplicationController
   def index
     @campsite = Campsite.find(params[:campsite_id])
     @recruitment = Recruitment.new
-    @recruitments = @campsite.recruitments
+    @recruitments = @campsite.recruitments.where("scheduled_start_date > ?", DateTime.now)
+    @recruitments = @recruitments.where(is_active: "true").includes([:user])
   end
 
   def create
@@ -35,6 +38,6 @@ class Public::RecruitmentsController < ApplicationController
 
   private
   def recruitment_params
-    params.require(:recruitment).permit(:scheduled_start_date, :scheduled_end_date, :title, :content, :capacity, :is_active)
+    params.require(:recruitment).permit(:image, :scheduled_start_date, :scheduled_end_date, :title, :content, :capacity, :is_active)
   end
 end

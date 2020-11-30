@@ -1,40 +1,88 @@
-<%= @recruitment.title %>
-<%= @recruitment.content %>
-<%= @recruitment.participations.count %>/<%= @recruitment.capacity %>
-<%= link_to '参加者確認', public_campsite_recruitment_participations_path(@campsite, @recruitment) %>
-<%= @recruitment.scheduled_start_date %>
-<%= @recruitment.scheduled_end_date %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="area">
+      <%# サイドバー %>
+      <%= render partial: "layouts/sidebar" %>
 
-<% if @recruitment.is_active == true %>
-  <% unless @recruitment.participations.count == @recruitment.capacity %>
-    参加者募集中
-  <% else %>
-    定員人数に達した為参加を中止しています
-  <% end %>
-<% else %>
-  参加者募集を締め切りました
-<% end %>
+      <%# メインコンテンツ %>
+      <div class="main">
+        <div class="main-imagecolor-opacity">
+          <h2 class="recruitment-main-title"><%= @recruitment.title %></h2>
+          <div class="recruitment-image">
+            <%= attachment_image_tag @recruitment, :image, format: 'jpeg', size: "700x300", fallback: "noimage-recruitment.png", class: "no-image-circle" %>
+          </div>
+          <div class="recruitment-content">
+            <%= @recruitment.content %>
+          </div>
+          <div class="campsite-content">
+            <div class="campsite-text">
+              <table class="campsite-table">
+                <tr>
+                  <th>予定日</th>
+                  <td>
+                    <%= @recruitment.scheduled_start_date.strftime("%Y年%m月%d日 -") %>
+                    <%= @recruitment.scheduled_end_date.strftime("%Y年%m月%d日") %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>募集数数</th>
+                  <td>
+                    <%= @recruitment.participations.count %>/<%= @recruitment.capacity %><%= link_to '参加者確認', public_campsite_recruitment_participations_path(@campsite, @recruitment) %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>募集状況</th>
+                  <td>
+                    <% if @recruitment.is_active == true %>
+                      <% unless @recruitment.participations.count == @recruitment.capacity %>
+                        参加者募集中!
+                      <% else %>
+                        定員人数に達した為参加を中止しています
+                      <% end %>
+                    <% else %>
+                      参加者募集を締め切りました
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>場所</th>
+                  <td><%= @recruitment.campsite.name %></td>
+                </tr>
+                <tr>
+                  <th>住所</th>
+                  <td>〒<%= @campsite.postcode.to_s.insert(3, "-") %>　<%= @recruitment.campsite.address %></td>
+                </tr>
+              </table>
+            </div>
+            <div class="link-field">
+              <% if user_signed_in? %>
+                <% if current_user.already_participationed?(@recruitment) %>
+                  <%= link_to public_campsite_recruitment_participation_path(@campsite, @recruitment), method: :delete, remote: true, class: "link" do %>
+                    参加をキャンセルする
+                  <% end %>
+                <% else %>
+                  <%# 参加人数と定員人数が同じの時、参加希望ボタンを表示させない %>
+                  <% unless @recruitment.participations.count == @recruitment.capacity %>
+                    <%= link_to public_campsite_recruitment_participations_path(@campsite, @recruitment), method: :post, remote: true, class: "link" do %>
+                      参加を希望する
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
 
-
-<% if user_signed_in? && current_user.id == @recruitment.user_id %>
-  <% if @recruitment.is_active == true %>
-    <%= link_to '募集を締め切る', public_campsite_recruitment_activate_path(@campsite, @recruitment) %>
-  <% else %>
-    <%= link_to '募集を再会する', public_campsite_recruitment_activate_path(@campsite, @recruitment) %>
-  <% end %>
-<% end %>
-
-<% if user_signed_in? %>
-  <% if current_user.already_participationed?(@recruitment) %>
-    <%= link_to public_campsite_recruitment_participation_path(@campsite, @recruitment), method: :delete, remote: true do %>
-      参加をキャンセルする
-    <% end %>
-  <% else %>
-    <%# 参加人数と定員人数が同じの時、参加希望ボタンを表示させない %>
-    <% unless @recruitment.participations.count == @recruitment.capacity %>
-      <%= link_to public_campsite_recruitment_participations_path(@campsite, @recruitment), method: :post, remote: true do %>
-        参加を希望する
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+            <div class="link-field">
+              <% if user_signed_in? && current_user.id == @recruitment.user_id %>
+                <% if @recruitment.is_active == true %>
+                  <%= link_to '募集を締め切る', public_campsite_recruitment_activate_path(@campsite, @recruitment), class: "link" %>
+                <% else %>
+                  <%= link_to '募集を再会する', public_campsite_recruitment_activate_path(@campsite, @recruitment), class: "link" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

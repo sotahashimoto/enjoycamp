@@ -8,34 +8,74 @@
       <div class="main">
         <div class="main-imagecolor-opacity">
           <h2 class="main-title"><%= @campsite.name %>の参加者募集</h2>
-          <%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
-            <%= f.text_area :title %>
-            <%= f.text_area :content %>
-            <%= f.number_field :capacity %>
-            <%= f.date_select :scheduled_start_date, use_month_numbers: true %>
-            <%= f.date_select :scheduled_end_date, use_month_numbers: true %>
-            <%= f.submit "投稿" %>
-          <% end %>
+          <div class="comments-table">
+            <% @recruitments.each do |recruitment| %>
+              <div class="comments-table-content">
+                <table>
+                  <tr>
+                    <td rowspan="3">
+                      <%= attachment_image_tag recruitment.user, :image, format: 'jpeg', size: "100x100", fallback: "noimage-user.png", class: "comment-user-image-circle" %>
+                    </td>
+                    <td>
+                      <span>
+                        <%= link_to public_user_path(recruitment.user) do %>
+                          <%= recruitment.user.name %>
+                        <% end %>
+                        <span>さんの募集</span>
 
-          <% @recruitments.each do |recruitment| %>
-            <%= link_to public_campsite_recruitment_path(@campsite, recruitment) do %>
-              <%= recruitment.title %>
+                        <% if recruitment.is_active == true %>
+                          <% unless recruitment.participations.count == recruitment.capacity %>
+                            参加者募集中
+                          <% else %>
+                            定員人数に達した為募集を中止しています
+                          <% end %>
+                        <% else %>
+                          参加者募集を締め切りました
+                        <% end %>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>
+                        <%= recruitment.scheduled_start_date.strftime("予定日%Y年%m月%d日 -") %>
+                        <%= recruitment.scheduled_end_date.strftime("%Y年%m月%d日") %>
+                        募集人数<%= recruitment.participations.count %>/<%= recruitment.capacity %>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <%= link_to public_campsite_recruitment_path(@campsite, recruitment) do %>
+                        <%= recruitment.title.truncate(35) %>
+                      <% end %>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             <% end %>
-            <%= recruitment.content %>
-            <%= recruitment.participations.count %>/<%= recruitment.capacity %>
-            <%= recruitment.scheduled_start_date %>
-            <%= recruitment.scheduled_end_date %>
+          </div>
 
-            <% if recruitment.is_active == true %>
-              <% unless recruitment.participations.count == recruitment.capacity %>
-                参加者募集中
-              <% else %>
-                定員人数に達した為参加を中止しています
-              <% end %>
-            <% else %>
-              参加者募集を締め切りました
-            <% end %><br>
-          <% end %>
+          <div class="comment-content-field">
+            <%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
+              <%= f.text_area :title, placeholder: "募集タイトル 35文字以内
+例：一緒にキャンプして焚き火を囲み語らいあいませんか？", class: "form-control recruitment-title-form", required:true, minlength: 1, maxlength: 35 %>
+              <%= f.text_area :content, placeholder: "募集内容 350文字以内
+例：職場や学校以外での交流を求めている方は気軽に参加して貰えればと思います！
+お酒や料理の好きな方、新しい環境に飛び込んでみたい方、知り合いや友達を増やしたい方等興味がありましたらお気軽に連絡下さい！
+
+※宗教・勧誘・ネットワークビジネス・営利目的・異性目的・暴力団関係者・その他、マナーの欠如した方は固くお断りします。", class: "form-control comment-content-form recruitment-content-form", required:true , minlength: 1, maxlength: 350 %>
+              <%# use_month_numbers: true "月"の日本語化 %>
+              イベント開始日<%= f.date_select :scheduled_start_date, use_month_numbers: true %>
+              終了日<%= f.date_select :scheduled_end_date, use_month_numbers: true %>
+              募集人数<%= f.number_field :capacity, placeholder: "最大30", class: "capacity-form", required:true, min:"1", max:"30" %>人
+              <div class="a">
+              <%= f.attachment_field :image, placeholder: "画像", class: "recruitment-image-attachment_field" %>
+              <div class="comment-submit-field">
+                <%= f.submit "投稿", class: "comment-submit-btn" %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

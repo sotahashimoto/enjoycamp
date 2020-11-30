@@ -17,9 +17,7 @@ User.create!(
       キャンプ歴:2019年10月～
       拠点:山陰
       テント:サーカスtc、名も無きスクリーンタープ
-      スタイル:ソロ
-      好き:ビール、肉、焚き火
-      憧れ:連泊キャンプ、ソログルキャン",
+      スタイル:ソロ",
       password: "aaaaaa",
       password_confirmation: "aaaaaa"
     },
@@ -110,7 +108,7 @@ Campsite.create!(
     },
     {
       image: File.open("./app/assets/images/5.png"),
-      name: "舞洲バーベキューパーク",
+      name: "かたつむりかたつむりかたつむりかた",
       postcode: "5540042",
       address: "大阪府大阪市此花区北港緑地2-1-107"
     },

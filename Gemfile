@@ -83,5 +83,8 @@ gem 'bootstrap', '~> 4.5.0'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
+# アイコン
+gem 'font-awesome-sass', '~> 5.4.1'
+
 # 環境変数
 gem 'dotenv-rails'

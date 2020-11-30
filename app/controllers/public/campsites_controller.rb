@@ -1,4 +1,6 @@
 class Public::CampsitesController < ApplicationController
+  before_action :authenticate_user!
+
   def top
     @campsites = Campsite.limit(6)
   end
