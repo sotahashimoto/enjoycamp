@@ -36,7 +36,7 @@
               <div class="link-field"><%= link_to "口コミする!", public_campsite_comment_path(@campsite), class: "link" %></div>
               <div class="link-field"><%= link_to "キャンプ募集/参加する!", public_campsite_recruitments_path(@campsite), class: "link" %></div>
               <%# Googlemap表示 %>
-              
+              <div id="map"></div>
             </div>
           </div>
         </div>
@@ -76,4 +76,3 @@
 <script async defer
                     src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
       </script>
-      <div id="map"></div>
