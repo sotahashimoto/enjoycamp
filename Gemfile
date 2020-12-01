@@ -86,5 +86,8 @@ gem "refile-mini_magick"
 # アイコン
 gem 'font-awesome-sass', '~> 5.4.1'
 
+# Googlemap
+gem "geocoder"
+
 # 環境変数
 gem 'dotenv-rails'
