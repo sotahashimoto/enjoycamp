@@ -53,7 +53,7 @@ https://enjoycamp.work/
 
 ### インフラ構成図
 
-<img width="622" alt="インフラ構成図" src="https://user-images.githubusercontent.com/67676627/100733013-eae61380-3410-11eb-8db4-000e448fc02b.png">
+<img width="503" alt="インフラ構成図" src="https://user-images.githubusercontent.com/67676627/100735220-34842d80-3414-11eb-9604-316050c2ac7e.png">
 
 ### テスト
 
@@ -68,7 +68,7 @@ https://enjoycamp.work/
 
 ## ER 図
 
-<img width="645" alt="ER図" src="https://user-images.githubusercontent.com/67676627/100732487-1ddbd780-3410-11eb-9706-507599a37d45.png">
+<img width="737" alt="ER図" src="https://user-images.githubusercontent.com/67676627/100734389-f5091180-3412-11eb-80a2-99df2d2bd72a.png">
 
 <!-- ## 設計書 -->
 
