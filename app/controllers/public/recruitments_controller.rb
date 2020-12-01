@@ -9,7 +9,9 @@ class Public::RecruitmentsController < ApplicationController
   def index
     @campsite = Campsite.find(params[:campsite_id])
     @recruitment = Recruitment.new
+    # イベント開始日が明日以降の日付のイベントのみ表示
     @recruitments = @campsite.recruitments.where("scheduled_start_date > ?", DateTime.now)
+    # 現在募集中のイベントだけ表示
     @recruitments = @recruitments.where(is_active: "true").includes([:user])
   end
 
