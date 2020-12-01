@@ -5,8 +5,9 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @participations = @user.participations.includes([:campsite])
-    # キャンプ募集の開始部日が今日より前で募集中の時に表示
+    # イベント開始日が明日以降の日付のイベントのみ表示
     @recruitments = @user.recruitments.where("scheduled_start_date > ?", DateTime.now)
+    # 現在募集中のイベントだけ表示
     @recruitments = @recruitments.where(is_active: "true").includes([:campsite])
   end
 

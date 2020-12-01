@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update]
 
     # キャンプ場
-    get "campsites/top" => "campsites#top"
     resources :campsites, only: [:show, :index, :edit, :create, :update, :destroy] do
       # キャンプ場口コミ
       resources :comments, only: [:show, :create]

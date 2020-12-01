@@ -10,12 +10,12 @@ class Public::HomesController < ApplicationController
       user.password = SecureRandom.urlsafe_base64
     end
     sign_in user
-      redirect_to public_campsites_top_path
+      redirect_to public_campsites_path
   end
 
   private
   # ログインしている時homes#topには飛べない
   def redirect_root
-    redirect_to public_campsites_top_path if user_signed_in?
+    redirect_to public_campsites_path if user_signed_in?
   end
 end
