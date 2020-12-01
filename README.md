@@ -49,7 +49,7 @@ https://enjoycamp.work/
 
 ### テスト
 
-- Rspec (単体／結合） 計 0
+- Rspec (単体／結合） 計 40
 - CircleCIを用いてDocker-composeでコンテナを構築し自動テスト
 
 ### その他使用技術
