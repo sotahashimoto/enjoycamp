@@ -7,7 +7,7 @@
       <%# メインコンテンツ %>
       <div class="main">
         <div class="main-imagecolor-opacity">
-          <h2 class="main-title"><%= @campsite.name %>の参加者募集</h2>
+          <h2 class="main-title"><%= @campsite.name %>募集/参加！</h2>
           <div class="comments-table">
             <% @recruitments.each do |recruitment| %>
               <div class="comments-table-content">
@@ -70,9 +70,10 @@
               終了日<%= f.date_select :scheduled_end_date, use_month_numbers: true %>
               募集人数<%= f.number_field :capacity, placeholder: "最大30", class: "capacity-form", required:true, min:"1", max:"30" %>人
               <div class="a">
-              <%= f.attachment_field :image, placeholder: "画像", class: "recruitment-image-attachment_field" %>
-              <div class="comment-submit-field">
-                <%= f.submit "投稿", class: "comment-submit-btn" %>
+                <%= f.attachment_field :image, placeholder: "画像", class: "recruitment-image-attachment_field" %>
+                <div class="comment-submit-field">
+                  <%= f.submit "投稿", class: "comment-submit-btn" %>
+                </div>
               </div>
             <% end %>
           </div>
