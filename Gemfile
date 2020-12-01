@@ -86,6 +86,9 @@ gem "refile-mini_magick"
 # アイコン
 gem 'font-awesome-sass', '~> 5.4.1'
 
+# date_selectにバリデーション
+gem 'jc-validates_timeliness'
+
 # Googlemap
 gem "geocoder"
 
