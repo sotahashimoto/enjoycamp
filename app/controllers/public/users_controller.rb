@@ -27,6 +27,19 @@ class Public::UsersController < ApplicationController
     end
   end
 
+  # 自分が募集しているイベント一覧を表示
+  def recruitments
+    @user = User.find(params[:user_id])
+    # イベント開始日が明日以降の日付のイベントのみ表示
+    @recruitments = @user.recruitments.where("scheduled_start_date > ?", DateTime.now).includes([:campsite])
+  end
+
+  # 自分が参加予定のイベント一覧を表示
+  def participations
+    @user = User.find(params[:user_id])
+    @participations = @user.participations.includes([recruitment: :campsite])
+  end
+
   private
   def user_params
     params.require(:user).permit(:image, :name, :email, :favorite_place, :introduction)

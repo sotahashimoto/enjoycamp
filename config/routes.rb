@@ -14,7 +14,10 @@ Rails.application.routes.draw do
     get "search", to: 'campsites#search'
     post '/homes/guest_sign_in', to: 'homes#new_guest'
 
-    resources :users, only: [:show, :edit, :update]
+    resources :users, only: [:show, :edit, :update] do
+      get "participations", to: 'users#participations'
+      get "recruitments", to: 'users#recruitments'
+    end
 
     # キャンプ場
     resources :campsites, only: [:show, :index, :edit, :create, :update, :destroy] do

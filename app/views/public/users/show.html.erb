@@ -37,11 +37,19 @@
                   </tr>
                   <tr>
                     <th>募集中CAMP!</th>
-                    <td><%= @recruitments.count %></td>
+                    <td>
+                      <%= link_to public_user_recruitments_path(@user) do %>
+                        <%= @recruitments.count %>
+                      <% end %>
+                    </td>
                   </tr>
                   <tr>
                     <th>参加予定CAMP!</th>
-                    <td><%= @participations.count %></td>
+                    <td>
+                      <%= link_to public_user_participations_path(@user) do %>
+                        <%= @participations.count %>
+                      <% end %>
+                    </td>
                   </tr>
                 </table>
                 <% if user_signed_in? && @user == current_user %>
