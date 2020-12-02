@@ -1,13 +1,39 @@
-<%= link_to "index", admin_campsites_path(@campsites) %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="area">
+      <%# サイドバー %>
+      <%= render partial: "layouts/adminsidebar" %>
 
-<%= form_with model: @campsite, url: admin_campsites_path, local: true do |f| %>
-  <%= f.attachment_field :image, placeholder: "画像" %>
-  <%= f.text_area :name, placeholder: "名前", required:true, minlength: 1, maxlength: 17 %>
-  <%= f.text_area :postcode, placeholder: "郵便番号", required:true, minlength: 1, maxlength: 7 %>
-  <%= f.text_area :address, placeholder: "住所", required:true, minlength: 1, maxlength: 25 %>
-  <%= f.submit "投稿" %>
-<% end %>
-
-<% if admin_signed_in? %>
-  <%= link_to "Logout", destroy_admin_session_path, method: :delete %>
-<% end %>
+      <%# メインコンテンツ %>
+      <div class="main">
+        <div class="main-imagecolor-opacity">
+          <h2 class="main-title">Admin new page</h2>
+          <%= form_with model: @campsite, url: admin_campsites_path, local: true do |f| %>
+            <%= attachment_image_tag @campsite, :image, format: 'jpeg', size: "800x400", fallback: "noimage-campsite.png" %>
+            <%= f.attachment_field :image, placeholder: "画像" %>
+            <table>
+              <tr>
+                <th>名前</th>
+                <td>
+                  <%= f.text_area :name, placeholder: "名前", required:true, minlength: 1, maxlength: 17 %>
+                </td>
+              </tr>
+              <tr>
+                <th>郵便番号</th>
+                <td>
+                  <%= f.text_area :postcode, placeholder: "郵便番号", required:true, minlength: 1, maxlength: 7 %>
+                </td>
+              </tr>
+              <tr>
+                <th>住所</th>
+                <td><%= f.text_area :address, placeholder: "住所", required:true, minlength: 1, maxlength: 25 %>
+              </td>
+              </tr>
+            </table>
+            <%= f.submit "投稿" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

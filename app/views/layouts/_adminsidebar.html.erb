@@ -1,0 +1,25 @@
+<div class="sidebar">
+  <div class="sidebar-item">
+    <!-- 中身 -->
+  </div>
+  <div class="sidebar-item sidebar-item-fixed">
+    <!-- 固定・追従させたいエリア -->
+    <div class="sidebar-logo-field">
+      <%= link_to public_campsites_path do %>
+        <div class="sidebar-logo"></div>
+      <% end %>
+    </div>
+
+    <% if admin_signed_in? %>
+      <div class="sidebar-item-field">
+        <%= link_to "new", new_admin_campsite_path, class: "link" %>
+      </div>
+      <div class="sidebar-item-field">
+        <%= link_to "Campsites", admin_campsites_path, class: "link" %>
+      </div>
+      <div class="sidebar-item-field">
+        <%= link_to "Logout", destroy_admin_session_path, {method: :delete, class: "link"} %>
+      </div>
+    <% end %>
+  </div>
+</div>
