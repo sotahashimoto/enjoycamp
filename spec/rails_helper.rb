@@ -35,6 +35,8 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   # FactoryBotの利用を許可する
   config.include FactoryBot::Syntax::Methods
+  # sign_inメソッドが使用出来るようになる
+  config.include Devise::Test::IntegrationHelpers, type: :request
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
