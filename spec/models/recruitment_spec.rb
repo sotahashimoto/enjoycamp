@@ -6,13 +6,13 @@ RSpec.describe Recruitment, type: :model do
       it "空欄でないこと" do
         recruitment = build(:recruitment, title: nil)
         recruitment.valid?
-        expect(recruitment.errors[:title]).to include("can't be blank")
+        expect(recruitment.errors[:title]).to include("を入力してください")
       end
 
       it "35文字以下であること" do
         recruitment = build(:recruitment, title: "a" * 36)
         recruitment.valid?
-        expect(recruitment.errors[:title]).to include("is too long (maximum is 35 characters)")
+        expect(recruitment.errors[:title]).to include("は35文字以内で入力してください")
       end
     end
 
@@ -20,13 +20,13 @@ RSpec.describe Recruitment, type: :model do
       it "空欄でないこと" do
         recruitment = build(:recruitment, content: nil)
         recruitment.valid?
-        expect(recruitment.errors[:content]).to include("can't be blank")
+        expect(recruitment.errors[:content]).to include("を入力してください")
       end
 
       it "350文字以下であること" do
         recruitment = build(:recruitment, content: "a" * 351)
         recruitment.valid?
-        expect(recruitment.errors[:content]).to include("is too long (maximum is 350 characters)")
+        expect(recruitment.errors[:content]).to include("は350文字以内で入力してください")
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe Recruitment, type: :model do
       it "空欄でないこと" do
         recruitment = build(:recruitment, capacity: nil)
         recruitment.valid?
-        expect(recruitment.errors[:capacity]).to include("can't be blank")
+        expect(recruitment.errors[:capacity]).to include("を入力してください")
       end
     end
 
@@ -42,7 +42,7 @@ RSpec.describe Recruitment, type: :model do
       it "空欄でないこと" do
         recruitment = build(:recruitment, scheduled_start_date: nil)
         recruitment.valid?
-        expect(recruitment.errors[:scheduled_start_date]).to include("can't be blank")
+        expect(recruitment.errors[:scheduled_start_date]).to include("を入力してください")
       end
     end
 
@@ -50,7 +50,7 @@ RSpec.describe Recruitment, type: :model do
       it "空欄でないこと" do
         recruitment = build(:recruitment, scheduled_end_date: nil)
         recruitment.valid?
-        expect(recruitment.errors[:scheduled_end_date]).to include("can't be blank")
+        expect(recruitment.errors[:scheduled_end_date]).to include("を入力してください")
       end
     end
   end

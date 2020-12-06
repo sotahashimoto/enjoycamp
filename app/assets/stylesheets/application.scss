@@ -45,6 +45,16 @@
   margin: 2% auto 2% auto;
 }
 
+.errors_messages {
+  font-family: "きんいろサンセリフ", sans-serif;
+  font-size: 280%;
+  color: #005537;
+
+  ul {
+    list-style: none;
+  }
+}
+
 // 新規登録画面
 .signup-left {
   position: relative;

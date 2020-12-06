@@ -1,16 +1,16 @@
-en:
+ja:
   errors:
     messages:
-      invalid_date: "is not a valid date"
-      invalid_time: "is not a valid time"
-      invalid_datetime: "is not a valid datetime"
-      is_at: "must be at %{restriction}"
-      before: "must be before %{restriction}"
-      on_or_before: "must be on or before %{restriction}"
-      after: "must be after %{restriction}"
-      on_or_after: "must be on or after %{restriction}"
+      invalid_date: "は正しい形式で入力してください。"
+      invalid_time: "は正しい形式で入力してください。"
+      invalid_datetime: "は正しい形式で入力してください。"
+      is_at: "は %{restriction} である必要があります。"
+      before: "は %{restriction} より前を指定してください。"
+      on_or_before: "は %{restriction} 以前を指定してください。"
+      after: "は %{restriction} より後を指定してください。"
+      on_or_after: "は %{restriction} 以降を指定してください。"
   validates_timeliness:
     error_value_formats:
-      date: '%Y-%m-%d'
-      time: '%H:%M:%S'
-      datetime: '%Y-%m-%d %H:%M:%S'
+      date: '%Y年%m-%d'
+      time: '%H:%M'
+      datetime: '%Y年%m月%d日'

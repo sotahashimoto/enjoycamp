@@ -58,6 +58,9 @@
 
           <div class="comment-content-field">
             <%= form_with(model: @recruitment, url: public_campsite_recruitments_path, local: true) do |f| %>
+              <%# エラーメッセージ 部分テンプレート化 %>
+              <%= render 'layouts/error_messages', model: f.object %>
+
               <%= f.text_area :title, placeholder: "募集タイトル 35文字以内
 例：一緒にキャンプして焚き火を囲み語らいあいませんか？", class: "form-control recruitment-title-form", required:true, minlength: 1, maxlength: 35 %>
               <%= f.text_area :content, placeholder: "募集内容 350文字以内

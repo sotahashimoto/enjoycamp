@@ -17,15 +17,16 @@ class Recruitment < ApplicationRecord
   validates :content, length: {maximum: 350}
   validates :capacity, numericality: { only_integer: true, greater_than: 0, less_than: 31}
 
+  # 開始日の日付は明日以降でないと指定できない
   validates :scheduled_start_date, timeliness: { on_or_after: Date.tomorrow }
 
   validate :start_end_check
 
-  # 終了日が開始日の前日付にならないようにする
+  # 終了日は開始日以降で指定する
   def start_end_check
     return true if scheduled_start_date.blank? || scheduled_end_date.blank?
-    return true if scheduled_start_date < scheduled_end_date
-    errors.add(:scheduled_end_date, "の日付を正しく選択してください。")
+    return true if scheduled_start_date <= scheduled_end_date
+    errors.add(:scheduled_end_date, "を開始日以降で指定してください。")
     false
   end
 end
