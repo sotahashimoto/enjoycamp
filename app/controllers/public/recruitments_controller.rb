@@ -22,7 +22,10 @@ class Public::RecruitmentsController < ApplicationController
     if @recruitment.save
       redirect_back(fallback_location: root_path)
     else
-      redirect_back(fallback_location: root_path)
+      @recruitments = @campsite.recruitments.where("scheduled_start_date > ?", DateTime.now)
+      # 現在募集中のイベントだけ表示
+      @recruitments = @recruitments.where(is_active: "true").includes([:user])
+      render "index"
     end
   end
 
