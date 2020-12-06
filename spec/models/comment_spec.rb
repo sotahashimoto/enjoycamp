@@ -6,13 +6,13 @@ RSpec.describe Comment, type: :model do
       it "空欄でないこと" do
         comment = build(:comment, content: nil)
         comment.valid?
-        expect(comment.errors[:content]).to include("can't be blank")
+        expect(comment.errors[:content]).to include("を入力してください")
       end
 
       it "200文字以下であること" do
         comment = build(:comment, content: "a" * 201)
         comment.valid?
-        expect(comment.errors[:content]).to include("is too long (maximum is 200 characters)")
+        expect(comment.errors[:content]).to include("は200文字以内で入力してください")
       end
     end
   end

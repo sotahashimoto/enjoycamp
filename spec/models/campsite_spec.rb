@@ -6,13 +6,13 @@ RSpec.describe Campsite, type: :model do
       it "空欄でないこと" do
         campsite = build(:campsite, name: nil)
         campsite.valid?
-        expect(campsite.errors[:name]).to include("can't be blank")
+        expect(campsite.errors[:name]).to include("を入力してください")
       end
 
-      it "200文字以下であること" do
+      it "17文字以下であること" do
         campsite = build(:campsite, name: "a" * 18)
         campsite.valid?
-        expect(campsite.errors[:name]).to include("is too long (maximum is 17 characters)")
+        expect(campsite.errors[:name]).to include("は17文字以内で入力してください")
       end
     end
 
@@ -20,13 +20,13 @@ RSpec.describe Campsite, type: :model do
       it "空欄でないこと" do
         campsite = build(:campsite, postcode: nil)
         campsite.valid?
-        expect(campsite.errors[:postcode]).to include("can't be blank")
+        expect(campsite.errors[:postcode]).to include("を入力してください")
       end
 
-      it "200文字以下であること" do
+      it "7文字以下であること" do
         campsite = build(:campsite, postcode: "0" * 8)
         campsite.valid?
-        expect(campsite.errors[:postcode]).to include("is too long (maximum is 7 characters)")
+        expect(campsite.errors[:postcode]).to include("は7文字以内で入力してください")
       end
     end
 
@@ -34,13 +34,13 @@ RSpec.describe Campsite, type: :model do
       it "空欄でないこと" do
         campsite = build(:campsite, address: nil)
         campsite.valid?
-        expect(campsite.errors[:address]).to include("can't be blank")
+        expect(campsite.errors[:address]).to include("を入力してください")
       end
 
-      it "200文字以下であること" do
+      it "25文字以下であること" do
         campsite = build(:campsite, address: "a" * 26)
         campsite.valid?
-        expect(campsite.errors[:address]).to include("is too long (maximum is 25 characters)")
+        expect(campsite.errors[:address]).to include("は25文字以内で入力してください")
       end
     end
   end
