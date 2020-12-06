@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      recruitment: イベント
+    attributes:
+      recruitment:
+        scheduled_start_date: イベント開始日
+        scheduled_end_date: イベント終了日
