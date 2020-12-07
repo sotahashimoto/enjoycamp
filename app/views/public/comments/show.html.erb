@@ -10,45 +10,16 @@
           <h2 class="main-title"><%= @campsite.name %></h2>
 
           <div class="comments-table">
-            <% @comments.each do |comment| %>
-              <div class="comments-table-content">
-                <table>
-                  <tr>
-                    <td rowspan="2">
-                      <%= attachment_image_tag comment.user, :image, format: 'jpeg', size: "100x100", fallback: "noimage-user.png", class: "comment-user-image-circle" %>
-                    </td>
-                    <td>
-                      <span>
-                        <%= link_to public_user_path(comment.user) do %>
-                          <%= comment.user.name %>
-                        <% end %>
-                      <span>さんの口コミ</span>
-                      </span>
-                      <span>
-                        <%= comment.created_at.strftime("%Y年%m月投稿") %>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="comment-content"><%= comment.content %></td>
-                  </tr>
-                </table>
-              </div>
-            <% end %>
-          </div>
-
-          <% if user_signed_in? %>
-            <div class="comment-content-field">
-              <%= form_with(model: @comment, url: public_campsite_comments_path, local: true) do |f| %>
-                <%= f.text_area :content, placeholder: "口コミ内容 200文字以内
-星空が結構見えました。星を見たければ山奥のイメージだったので意外でした。
-鹿や猿などの野生動物にも出会えるという自然豊かなキャンプ場、遊び疲れたら、徒歩圏内にある天然温泉「キャンプの湯」へ。自然に囲まれた露天風呂で癒されましょう。", class: "form-control comment-content-form", required:true , minlength: 1, maxlength: 200 %>
-                <div class="comment-submit-field">
-                  <%= f.submit "投稿", class: "comment-submit-btn" %>
-                </div>
-              <% end %>
+            <%# コメント表示機能 非同期 %>
+            <div class="comments">
+              <%= render partial: "comments", locals: {comments: @comments} %>
             </div>
-          <% end %>
+
+            <%# コメント投稿機能 非同期 %>
+            <div class="commentform">
+              <%= render partial: "commentform", locals: {comment: @comment} %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
