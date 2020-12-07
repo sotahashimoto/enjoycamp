@@ -6,7 +6,7 @@ class Public::CampsitesController < ApplicationController
   end
 
   def index
-    @campsites = Campsite.all
+    @campsites = Campsite.all.page(params[:page]).per(10)
   end
 
   def show
