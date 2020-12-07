@@ -1,0 +1,4 @@
+<%# 'public/'の書き忘れに注意 %>
+$(".commentform").html("<%= j(render partial: 'public/comments/commentform', locals: { campsite: @campsite, comment: @comment}) %>");
+$(".comments").html("<%= j(render partial: 'public/comments/comments', locals: {comments: @comments}) %>");
+$('#comments').val()

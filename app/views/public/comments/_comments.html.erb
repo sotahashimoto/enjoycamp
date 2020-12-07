@@ -1,0 +1,25 @@
+<% @comments.each do |comment| %>
+  <div class="comments-table-content">
+    <table>
+      <tr>
+        <td rowspan="2">
+          <%= attachment_image_tag comment.user, :image, format: 'jpeg', size: "100x100", fallback: "noimage-user.png", class: "comment-user-image-circle" %>
+        </td>
+        <td>
+          <span>
+            <%= link_to public_user_path(comment.user) do %>
+              <%= comment.user.name %>
+            <% end %>
+          <span>さんの口コミ</span>
+          </span>
+          <span>
+            <%= comment.created_at.strftime("%Y年%m月投稿") %>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td class="comment-content"><%= comment.content %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

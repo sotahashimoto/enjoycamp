@@ -12,7 +12,8 @@ class Public::CommentsController < ApplicationController
     @comment = @campsite.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_back(fallback_location: root_path)
+      @comment = Comment.new
+      @comments = @campsite.comments.includes([:user])
     else
       redirect_back(fallback_location: root_path)
     end
