@@ -6,3 +6,10 @@ ja:
       recruitment:
         scheduled_start_date: イベント開始日
         scheduled_end_date: イベント終了日
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
