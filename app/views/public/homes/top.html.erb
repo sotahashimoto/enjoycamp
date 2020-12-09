@@ -3,3 +3,9 @@
   <p class="top-login"><%= link_to "Login", new_user_session_path, class: "link" %></p>
   <p class="top-guestlogin"><%= link_to "かんたんログイン", public_homes_guest_sign_in_path, { method: :post, class: "link"} %></p>
 </div>
+
+<div class="responsive-top-image">
+  <span class="top-sinup"><%= link_to "Sign up", new_user_registration_path, class: "link responsive-top-sinup" %></span>
+  <span class="top-login"><%= link_to "Login", new_user_session_path, class: "link responsive-top-login" %></span>
+  <span class="top-guestlogin"><%= link_to "かんたんログイン", public_homes_guest_sign_in_path, { method: :post, class: "link responsive-top-guestlogin"} %></span>
+</div>
