@@ -92,3 +92,45 @@
     color: white;
   }
 }
+
+/* タブレット縦置きサイズ（769px）以上の際に適用される設定 */
+@media screen and (min-width:769px) {
+  // レスポンシブ用のtopページ画像を非表示
+  .responsive-top-image {
+    display: none;
+  }
+}
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  // topページ画像を非表示
+  .top-image {
+    display: none;
+  }
+
+  // レスポンシブ用のtopページ画像表示
+  .responsive-top-image {
+    height: 100%;
+    background-image: image-url("responsive-top.png");
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .responsive-top-sinup {
+    position: absolute;
+    margin: 550px 0 0 60px;
+  }
+
+  .responsive-top-login {
+    position: absolute;
+    margin: 550px 0 0 250px;
+  }
+
+  .responsive-top-guestlogin {
+    position: absolute;
+    margin: 630px 0 0 130px;
+  }
+}

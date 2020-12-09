@@ -74,3 +74,17 @@
   font-family: "きんいろサンセリフ", sans-serif;
   margin: 5% 0 0 20%;
 }
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  // user showのプロフィール画像 サイズ変更
+  .mypage-content .mypage-left .image-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  // user editのフォームサイズ変更
+  .mypage-content .mypage-right .mypage-right-table .form-control {
+    margin-left: 0;
+  }
+}
