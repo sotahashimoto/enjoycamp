@@ -340,3 +340,47 @@
     margin: 1%;
   }
 }
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  .signup-left {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+
+    .signup-left-image {
+      margin-left: 5%;
+      width: 80%;
+      min-height: 40vh;
+    }
+  }
+
+  .login .login-left .login-left-image {
+    position: absolute;
+    width: 80%;
+    min-height: 80vh;
+    top: 0px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: image-url("login-logo.png");
+  }
+
+  .main {
+    .main-title {
+      font-size: 400%;
+    }
+  }
+
+  .sidebar {
+    .sidebar-logo {
+      height: 90px;
+      margin: 0 0 0 5px;
+    }
+
+    .sidebar-item-fixed {
+      .link {
+        font-size: 70%;
+      }
+    }
+  }
+}

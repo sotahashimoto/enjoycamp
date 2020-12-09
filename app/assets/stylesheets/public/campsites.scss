@@ -100,3 +100,10 @@
 .campsite-link-map {
   padding-bottom: 3%;
 }
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  .campsites-attachment_image_tag {
+    width: 100%;
+  }
+}
