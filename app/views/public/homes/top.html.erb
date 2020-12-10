@@ -1,7 +1,13 @@
 <div class="top-image">
-  <p class="top-sinup"><%= link_to "Sign up", new_user_registration_path, class: "link" %></p>
-  <p class="top-login"><%= link_to "Login", new_user_session_path, class: "link" %></p>
-  <p class="top-guestlogin"><%= link_to "かんたんログイン", public_homes_guest_sign_in_path, { method: :post, class: "link"} %></p>
+  <%= link_to new_user_registration_path, class: "link-top-sinup" do %>
+    <span class="top-sinup">Sign up</span>
+  <% end %>
+  <%= link_to new_user_session_path, class: "link-top-login" do %>
+    <span class="top-login">Login</span>
+  <% end %>
+  <%= link_to public_homes_guest_sign_in_path, { method: :post, class: "link-top-guestlogin"} do %>
+    <span class="top-guestlogin">かんたんログイン</span>
+  <% end %>
 </div>
 
 <div class="responsive-top-image">
