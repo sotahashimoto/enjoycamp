@@ -33,8 +33,13 @@
               </table>
             </div>
             <div class="campsite-link-map">
-              <div class="link-field"><%= link_to "口コミする!", public_campsite_comment_path(@campsite), class: "link" %></div>
-              <div class="link-field"><%= link_to "キャンプ募集/参加する!", public_campsite_recruitments_path(@campsite), class: "link" %></div>
+              <%= link_to public_campsite_comment_path(@campsite), class: "public_campsite_comment-link" do %>
+                <span class="public_campsite_comment-link-span">口コミする!</span>
+              <% end %>
+              <div class="asd"></div>
+              <%= link_to public_campsite_recruitments_path(@campsite), class: "public_campsite_recruitments-link" do %>
+                <span class="public_campsite_recruitments-span">キャンプ募集/参加する!</span>
+              <% end %>
               <%# Googlemap表示 %>
               <div id="map"></div>
             </div>

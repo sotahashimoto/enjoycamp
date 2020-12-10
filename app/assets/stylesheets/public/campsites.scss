@@ -54,8 +54,29 @@
   font-family: "きんいろサンセリフ", sans-serif;
 
   th {
-    width: 25%;
+    width: 20%;
   }
+}
+
+.asd {
+  margin-bottom: 20px;
+}
+
+.public_campsite_comment-link {
+  margin-left: 360px;
+  margin-bottom: 30px;
+  padding: 10px 110px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10%;
+  background-color: yellowgreen;
+  color: black;
+  font-family: "きんいろサンセリフ", sans-serif;
+}
+
+.public_campsite_comment-link:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .link-field {
@@ -64,6 +85,22 @@
   text-align: center;
   border-radius: 10%;
   background-color: yellowgreen;
+}
+
+.public_campsite_recruitments-link {
+  margin-left: 360px;
+  padding: 10px 60px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10%;
+  background-color: yellowgreen;
+  color: black;
+  font-family: "きんいろサンセリフ", sans-serif;
+}
+
+.public_campsite_recruitments-link:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .link-field:hover {
