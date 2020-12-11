@@ -58,7 +58,7 @@
   }
 }
 
-.asd {
+.campsite-link-while {
   margin-bottom: 20px;
 }
 
@@ -144,8 +144,33 @@
     width: 100%;
   }
 
+  // campsitie show キャンプ場の画像
   .campsite-image .campsite-image-circle {
     width: 250px;
+    height: 200px;
+  }
+
+  // campsitie show キャンプ場の説明文
+  .campsite-table {
+    th {
+      font-size: 50%;
+    }
+    td {
+      font-size: 50%;
+    }
+  }
+
+  // campsitie show 口コミする!ボタン
+  .public_campsite_comment-link {
+    margin-left: 60px;
+    margin-bottom: 0px;
+    padding: 10px 30px;
+  }
+
+  // campsites show キャンプ募集/参加するボタン
+  .public_campsite_recruitments-link {
+    padding: 10px 30px;
+    margin-left: 10px;
   }
 
   // campsites show 口コミする キャンプ募集/参加する フォームサイズ変更
