@@ -140,6 +140,13 @@
 
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
+  // campsites index キャンプ場検索ボタン
+  .campsites-search-area {
+    .campsites-search-btn {
+      width: 20%;
+    }
+  }
+
   .campsites-attachment_image_tag {
     width: 100%;
   }
