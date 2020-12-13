@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_104054) do
   create_table "campsites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image_id"
     t.string "name"
+    t.string "business_period"
     t.string "postcode"
     t.string "address"
     t.float "latitude"

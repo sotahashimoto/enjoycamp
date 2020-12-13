@@ -3,6 +3,7 @@ class CreateCampsites < ActiveRecord::Migration[5.2]
     create_table :campsites do |t|
       t.string :image_id
       t.string :name
+      t.string :business_period
       t.string :postcode
       t.string :address
       t.float :latitude

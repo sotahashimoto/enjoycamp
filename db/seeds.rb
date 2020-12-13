@@ -14,7 +14,7 @@ User.create!(
       email: "1@1.com",
       favorite_place: "舞洲バーベキューパーク",
       introduction: "年齢:平成6年男子
-      キャンプ歴:2019年10月～
+      キャンプ歴:2019年10月〜
       拠点:山陰
       テント:サーカスtc、名も無きスクリーンタープ
       スタイル:ソロ",
@@ -46,73 +46,85 @@ Campsite.create!(
       image: File.open("./app/assets/images/campsite-images1.png"),
       name: "清水公園キャンプ場",
       postcode: "2780043",
-      address: "千葉県野田市清水906"
+      address: "千葉県野田市清水906",
+      business_period: "通年営業(12/30-1/1)を除く"
     },
     {
       image: File.open("./app/assets/images/campsite-images2.png"),
       name: "くぬぎの森キャンプ場",
       postcode: "7295132",
-      address: "広島県庄原市東城町三坂962-1"
+      address: "広島県庄原市東城町三坂962-1",
+      business_period: "4月上旬-11月下旬"
     },
     {
       image: File.open("./app/assets/images/campsite-images3.png"),
       name: "満願ビレッジオートキャンプ",
       postcode: "3691625",
-      address: "埼玉県秩父郡皆野町下日野沢3902-1"
+      address: "埼玉県秩父郡皆野町下日野沢3902-1",
+      business_period: "通年営業"
     },
     {
       image: File.open("./app/assets/images/campsite-images4.png"),
       name: "太陽の丘オートキャンプ場",
       postcode: "3291412",
-      address: "栃木県さくら市喜連川5686"
+      address: "栃木県さくら市喜連川5686",
+      business_period: "通年営業"
     },
     {
       image: File.open("./app/assets/images/campsite-images5.png"),
       name: "ミリーズラブ",
       postcode: "3771612",
-      address: "群馬県吾妻郡嬬恋村大前細原2092-65"
+      address: "群馬県吾妻郡嬬恋村大前細原2092-65",
+      business_period: "通年営業"
     },
     {
       image: File.open("./app/assets/images/campsite-images6.png"),
       name: "キャンプアンドキャビンズ那須高原",
       postcode: "3250001",
-      address: "栃木県那須郡那須町高久甲5861-2"
+      address: "栃木県那須郡那須町高久甲5861-2",
+      business_period: "通年営業"
     },
     {
       image: File.open("./app/assets/images/campsite-images7.png"),
       name: "つくばねオートキャンプ場",
       postcode: "3150155",
-      address: "茨城県石岡市小幡2132-14"
+      address: "茨城県石岡市小幡2132-14",
+      business_period: "通年営業"
     },
     {
       image: File.open("./app/assets/images/campsite-images8.png"),
       name: "北軽井沢スイートグラス",
       postcode: "3771412",
-      address: "千葉県野田市清水906"
+      address: "千葉県野田市清水906",
+      business_period: "通年営業"
     },
     {
       image: File.open("./app/assets/images/campsite-images9.png"),
       name: "久多の里オートキャンプ場",
       postcode: "5200461",
-      address: "京都府京都市左京区久多川合町151"
+      address: "京都府京都市左京区久多川合町151",
+      business_period: "4月-11月"
     },
     {
       image: File.open("./app/assets/images/campsite-images10.png"),
       name: "二坊温泉オートキャンプ場",
       postcode: "5203252",
-      address: "滋賀県湖南市岩根678-28"
+      address: "滋賀県湖南市岩根678-28",
+      business_period: "通年営業(12/31-1/1)を除く"
     },
     {
       image: File.open("./app/assets/images/campsite-images11.png"),
       name: "飛雪の滝キャンプ場",
       postcode: "5195718",
-      address: "三重県南牟婁郡紀宝町浅里1409-1"
+      address: "三重県南牟婁郡紀宝町浅里1409-1",
+      business_period: "4-6月、9-11月は火曜日、12-3月は火曜日、水曜日12月29日-1月3日は定休日"
     },
     {
       image: File.open("./app/assets/images/campsite-images12.png"),
       name: "赤目四十八滝キャンプ場",
       postcode: "5180469",
-      address: "三重県名張市赤目町長坂941-1"
+      address: "三重県名張市赤目町長坂941-1",
+      business_period: "毎週火水木曜日定は休日"
     }
   ]
 )
