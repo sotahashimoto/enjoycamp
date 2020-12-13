@@ -30,6 +30,10 @@
                   <th>住所</th>
                   <td>〒<%= @campsite.postcode.to_s.insert(3, "-") %>　<%= @campsite.address %></td>
                 </tr>
+                <tr>
+                  <th>営業期間</th>
+                  <td><%= @campsite.business_period %></td>
+                </tr>
               </table>
             </div>
             <div class="campsite-link-map">
