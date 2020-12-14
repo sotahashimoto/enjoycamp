@@ -138,6 +138,10 @@
   padding-bottom: 3%;
 }
 
+.favorites-count {
+  color: rgba(248, 98, 98, 0.849);
+}
+
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
   // campsites index キャンプ場検索ボタン
